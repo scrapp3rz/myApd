@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AAC3106402F37F80DE0CB265 /* Pods_AppMyDelight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0174E126629C93C7FBA2B3 /* Pods_AppMyDelight.framework */; };
+		C111A8492094AA260028ECBE /* TextViewWithHashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C111A8482094AA250028ECBE /* TextViewWithHashtag.swift */; };
 		C1244BFF2088F3D300F85C2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1244BFE2088F3D300F85C2C /* AppDelegate.swift */; };
 		C1244C012088F3D300F85C2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1244C002088F3D300F85C2C /* ViewController.swift */; };
 		C1244C072088F3D300F85C2C /* AppMyDelight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1244C052088F3D300F85C2C /* AppMyDelight.xcdatamodeld */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		2C0174E126629C93C7FBA2B3 /* Pods_AppMyDelight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppMyDelight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51F30630D4AAA2B5F3A3A7DC /* Pods-AppMyDelight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppMyDelight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppMyDelight/Pods-AppMyDelight.debug.xcconfig"; sourceTree = "<group>"; };
+		C111A8482094AA250028ECBE /* TextViewWithHashtag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWithHashtag.swift; sourceTree = "<group>"; };
 		C1244BFB2088F3D300F85C2C /* AppMyDelight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppMyDelight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1244BFE2088F3D300F85C2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1244C002088F3D300F85C2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				C1DCA48020892A3D00CCAAB9 /* MydelButton.swift */,
 				C1DCA4792089250B00CCAAB9 /* UIView */,
 				C1657ACA208EA5E0006799D6 /* roundedImage.swift */,
+				C111A8482094AA250028ECBE /* TextViewWithHashtag.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				C1657ACE208F1610006799D6 /* SquareImageCell.swift in Sources */,
 				C1DCA48E20894DCF00CCAAB9 /* UsernameView.swift in Sources */,
 				C15C4E08208BD0D2005D1BEF /* MyTabBar.swift in Sources */,
+				C111A8492094AA260028ECBE /* TextViewWithHashtag.swift in Sources */,
 				C1DCA47620891D4900CCAAB9 /* ConnexionController.swift in Sources */,
 				C1DCA496208B24EE00CCAAB9 /* Category.swift in Sources */,
 				C15C4E0A208BD10D005D1BEF /* FilController.swift in Sources */,

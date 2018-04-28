@@ -11,8 +11,6 @@ import UIKit
 
 class PostView: UIView {
 
-    
-    
     @IBOutlet weak var Profile_Image: roundedImage!
     @IBOutlet weak var Username_Label: UILabel!
     @IBOutlet weak var Post_Image: UIImageView!
@@ -23,11 +21,17 @@ class PostView: UIView {
     @IBOutlet weak var TextView: UITextView!
     
     
+    @IBAction func Button_Like_Action(_ sender: Any) {
+    }
+    
+    @IBAction func Button_Comments_Action(_ sender: Any) {
+    }
     
     var view: UIView!
     var post: Post!
     var filController: FilController?
     var profileController: ProfileController?
+    var imageViewHeart: UIImageView?
     
     
     override init(frame: CGRect) {
@@ -56,23 +60,44 @@ class PostView: UIView {
         Number_Of_Likes.text = String(self.post.likes.count)
         Number_Of_Comments.text = String(self.post.comments.count)
         
+        // ajout du Like
+        if self.post.likes.contains(ME.id) {
+            Button_Like.setImage(#imageLiteral(resourceName: "coeur_plein"), for: .normal)
+        } else {
+            Button_Like.setImage(#imageLiteral(resourceName: "coeur_vide"), for: .normal)
+        }
         
+        // utilisation du doubleTap
+        Post_Image.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTap))
+        tap.numberOfTapsRequired = 2
+        Post_Image.addGestureRecognizer(tap)
         
     }
     
+    @objc func doubleTap() {
+        if imageViewHeart == nil {
+            imageViewHeart = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.width / 2, height: frame.width / 2))
+            imageViewHeart?.image = #imageLiteral(resourceName: "coeur_double_tap")
+            imageViewHeart?.center = Post_Image.center
+            Post_Image.addSubview(imageViewHeart!)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.imageViewHeart?.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+            }, completion: { (success) in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.imageViewHeart?.transform = CGAffineTransform.identity
+                }, completion: {( success) in
+                        self.imageViewHeart?.removeFromSuperview()
+                    self.imageViewHeart = nil
+                })
+            })
+        }
+    }
     func usernameAndName() ->NSMutableAttributedString {
         let mutable = NSMutableAttributedString(string: self.post.user.username, attributes: [.foregroundColor: UIColor.darkGray, .font: UIFont.boldSystemFont(ofSize: 16)])
         let nameAndFornameString =  "\n" + self.post.user.forname + " " + self.post.user.lastname
         mutable.append(NSAttributedString(string: nameAndFornameString, attributes: [.foregroundColor: UIColor.darkGray, .font: UIFont.boldSystemFont(ofSize: 14)]))
         return mutable
     }
-    
-    @IBAction func Button_Like_Action(_ sender: Any) {
-    }
-    
-    @IBAction func Button_Comments_Action(_ sender: Any) {
-    }
-    
-    
-    
+        
 }
