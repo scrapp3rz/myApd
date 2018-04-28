@@ -17,7 +17,7 @@
                 <outlet property="Button_Like" destination="TGj-BF-Rdb" id="RQm-mz-TBF"/>
                 <outlet property="Number_Of_Comments" destination="Jnh-GR-KNL" id="Dyk-Np-Bdo"/>
                 <outlet property="Number_Of_Likes" destination="lvh-de-U9x" id="I8b-Sf-Wip"/>
-                <outlet property="Post_Image" destination="KY2-4b-opK" id="wQz-3G-7TE"/>
+                <outlet property="Posted_Image" destination="KY2-4b-opK" id="dHL-KG-Ycx"/>
                 <outlet property="Profile_Image" destination="GJl-Gf-gMa" id="TFf-kt-S7s"/>
                 <outlet property="TextView" destination="h93-IW-pnO" id="bO4-cz-X9v"/>
                 <outlet property="Username_Label" destination="SdA-tf-A2G" id="WjQ-j3-fpV"/>
@@ -89,7 +89,7 @@
                         <constraint firstAttribute="height" constant="32" id="xCH-i0-Whe"/>
                     </constraints>
                 </stackView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h93-IW-pnO">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h93-IW-pnO" customClass="TextViewWithHashtag" customModule="AppMyDelight" customModuleProvider="target">
                     <rect key="frame" x="10" y="491" width="355" height="166"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -115,7 +115,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="h93-IW-pnO" secondAttribute="bottom" constant="10" id="yJQ-Wd-iMf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-460" y="38"/>
+            <point key="canvasLocation" x="-95" y="-17"/>
         </view>
     </objects>
     <resources>

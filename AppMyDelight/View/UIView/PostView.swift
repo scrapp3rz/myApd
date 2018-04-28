@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 
 class PostView: UIView {
 
+    @IBOutlet weak var Posted_Image: UIImageView!
     @IBOutlet weak var Profile_Image: roundedImage!
     @IBOutlet weak var Username_Label: UILabel!
-    @IBOutlet weak var Post_Image: UIImageView!
+  //  @IBOutlet weak var Post_Image: UIImageView!
     @IBOutlet weak var Number_Of_Likes: UILabel!
     @IBOutlet weak var Button_Like: UIButton!
     @IBOutlet weak var Number_Of_Comments: UILabel!
     @IBOutlet weak var Button_Comments: UIButton!
-    @IBOutlet weak var TextView: UITextView!
+    @IBOutlet weak var TextView: TextViewWithHashtag!
     
     
     @IBAction func Button_Like_Action(_ sender: Any) {
@@ -51,7 +54,8 @@ class PostView: UIView {
         
         // dl des images :
         Profile_Image.download(imageUrl: self.post.user.imageUrl)
-        Post_Image.download(imageUrl: self.post.imageUrl)
+        Posted_Image.download(imageUrl: self.post.imageUrl)
+        
         
         // ajout Username label
         Username_Label.attributedText = usernameAndName()
@@ -68,12 +72,16 @@ class PostView: UIView {
         }
         
         // utilisation du doubleTap
-        Post_Image.isUserInteractionEnabled = true
+        Posted_Image.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTap))
         tap.numberOfTapsRequired = 2
-        Post_Image.addGestureRecognizer(tap)
+        Posted_Image.addGestureRecognizer(tap)
         
-        // setup du customtextview agec ## clickable
+        // setup du customtextview avec ## clickable
+        TextView.setText(text: self.post.text)
+        
+        
+        
         
         
     }
@@ -82,8 +90,8 @@ class PostView: UIView {
         if imageViewHeart == nil {
             imageViewHeart = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.width / 2, height: frame.width / 2))
             imageViewHeart?.image = #imageLiteral(resourceName: "coeur_double_tap")
-            imageViewHeart?.center = Post_Image.center
-            Post_Image.addSubview(imageViewHeart!)
+            imageViewHeart?.center = Posted_Image.center
+            Posted_Image.addSubview(imageViewHeart!)
             UIView.animate(withDuration: 0.5, animations: {
                 self.imageViewHeart?.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
             }, completion: { (success) in
