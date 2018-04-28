@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FinishPostController" customModule="AppMyDelight" customModuleProvider="target">
+            <connections>
+                <outlet property="Posted_Image" destination="QyN-lD-yEq" id="FRn-MC-ovT"/>
+                <outlet property="Profile_Image" destination="WAE-H7-vem" id="zvX-Sn-Poq"/>
+                <outlet property="TextView" destination="yFx-E7-F2C" id="QkZ-8s-wF4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QyN-lD-yEq">
+                    <rect key="frame" x="265" y="10" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="FC5-yW-F2N"/>
+                        <constraint firstAttribute="width" constant="100" id="iwv-hn-NQd"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cat_Rules" translatesAutoresizingMaskIntoConstraints="NO" id="WAE-H7-vem" customClass="roundedImage" customModule="AppMyDelight" customModuleProvider="target">
+                    <rect key="frame" x="10" y="10" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="0Su-iO-opJ"/>
+                        <constraint firstAttribute="height" constant="50" id="abB-68-bSs"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Commentaires..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yFx-E7-F2C">
+                    <rect key="frame" x="68" y="10" width="189" height="100"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="uMr-h0-Q4Z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3h-GJ-w9S">
+                    <rect key="frame" x="10" y="119" width="355" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Ds2-9s-Zt7"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="XBZ-d0-QO4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="E3h-GJ-w9S" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="5wu-SK-KFy"/>
+                <constraint firstItem="E3h-GJ-w9S" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="8gc-t1-X7d"/>
+                <constraint firstItem="QyN-lD-yEq" firstAttribute="leading" secondItem="yFx-E7-F2C" secondAttribute="trailing" constant="8" symbolic="YES" id="A3x-41-kT1"/>
+                <constraint firstItem="WAE-H7-vem" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="B4f-aD-dqy"/>
+                <constraint firstItem="E3h-GJ-w9S" firstAttribute="top" secondItem="QyN-lD-yEq" secondAttribute="bottom" constant="9" id="Qki-tP-uoo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E3h-GJ-w9S" secondAttribute="trailing" constant="10" id="Yvx-fX-jC1"/>
+                <constraint firstItem="WAE-H7-vem" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="kuo-VJ-mUL"/>
+                <constraint firstItem="yFx-E7-F2C" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="oqr-dP-Jxb"/>
+                <constraint firstItem="yFx-E7-F2C" firstAttribute="leading" secondItem="WAE-H7-vem" secondAttribute="trailing" constant="8" id="orO-JA-VUk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QyN-lD-yEq" secondAttribute="trailing" constant="10" id="qgH-4r-fm9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E3h-GJ-w9S" secondAttribute="trailing" constant="10" id="vDz-0k-guC"/>
+                <constraint firstItem="QyN-lD-yEq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="vbI-od-wea"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Cat_Rules" width="603" height="602"/>
+    </resources>
+</document>
