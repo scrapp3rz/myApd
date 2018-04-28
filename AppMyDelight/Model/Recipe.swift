@@ -41,7 +41,7 @@ class Recipe {
         self._prepTime = dict["prepTime"] as? String ?? ""
         self._cookTime = dict["cookTime"] as? String ?? ""
         self._temperature = dict["temperature"] as? String ?? ""
-        self._ingredient = dict["ingredient"] as? [String] ?? [""]
+        self._ingredient = dict["ingredient"] as? [String] ?? []
         
         
         

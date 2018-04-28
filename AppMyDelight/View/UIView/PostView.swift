@@ -73,6 +73,9 @@ class PostView: UIView {
         tap.numberOfTapsRequired = 2
         Post_Image.addGestureRecognizer(tap)
         
+        // setup du customtextview agec ## clickable
+        
+        
     }
     
     @objc func doubleTap() {

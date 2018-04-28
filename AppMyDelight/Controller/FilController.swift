@@ -25,10 +25,12 @@ class FilController: UICollectionViewController, UICollectionViewDelegateFlowLay
     func getAllThePosts() {
         var usersToParse = ME.following
         usersToParse.append(ME.id)
+        print(usersToParse)
         for user in usersToParse {
             BDD().getPost(user: user, completion: { (post) -> (Void) in
                 if post != nil {
                     print("Post bien ajouté")
+                    
                     self.posts.append(post!)
                     self.collectionView?.reloadData()
                 }
