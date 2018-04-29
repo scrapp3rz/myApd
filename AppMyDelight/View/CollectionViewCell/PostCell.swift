@@ -27,6 +27,7 @@ class PostCell: UICollectionViewCell {
             postView = PostView(frame: bounds)
             addSubview(postView!)
         }
+        postView?.frame = bounds
         postView?.setup(post: self.post, filController: self.filcontroller, profileController: self.profileController)
     
     }

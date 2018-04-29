@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import UIKit
+
+
 
 extension String {
     
@@ -17,5 +20,15 @@ extension String {
     func decodage() -> String {
         return removingPercentEncoding ?? self
     }
+    
+    func rect(largeur: CGFloat) -> CGRect {
+        let size = CGSize(width: largeur, height: .greatestFiniteMagnitude)
+        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        return NSString(string: self).boundingRect(with: size, options: options, attributes: [.font: UIFont.systemFont(ofSize: 16)], context: nil)
+        
+        
+    }
+    
+    
     
 }

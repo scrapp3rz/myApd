@@ -16,6 +16,8 @@ class FilController: UICollectionViewController, UICollectionViewDelegateFlowLay
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView?.backgroundColor = .white
+        
         collectionView?.register(PostCell.self, forCellWithReuseIdentifier: POST_CELL)
         collectionView?.delegate = self
         getAllThePosts()
@@ -51,8 +53,12 @@ class FilController: UICollectionViewController, UICollectionViewDelegateFlowLay
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let post = posts[indexPath.row]
         let largeur = collectionView.frame.width
         var hauteur = 150 + largeur
+        if post.text != "" {
+            hauteur += post.text.rect(largeur: collectionView.frame.width).height
+        }
         return CGSize(width: largeur, height: hauteur)
     }
     
