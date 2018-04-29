@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class FinishPostController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var Profile_Image: roundedImage!
@@ -31,19 +32,21 @@ class FinishPostController: UIViewController, UITextViewDelegate {
     
     
     @objc func finishPost() {
+        self.view.endEditing(true)
         if canAdd {
             canAdd = false
             checkTextView()
             // enregistrer image dans le Stockage
             guard let data = UIImageJPEGRepresentation(image, 0.5) else { return }
             view.createActivityIndicator()
-            Stockage().addPostImage(data: data) { (success, string) -> (Void) in
+            let idUnic = UUID().uuidString
+            Stockage().addPostImage(reference: Ref().myPostImages.child(idUnic), data: data) { (success, string) -> (Void) in
                 // qui le convertit en URLString
                 self.canAdd = true
                 self.view.removeActivityIndicator()
                 if let reussi = success, reussi == true, string != nil {
                     let dict: [String: AnyObject] = [
-                        "imageURL": string! as AnyObject,
+                        "imageUrl": string! as AnyObject,
                         "id": ME.id as AnyObject,
                         "text": self.TextView.text as AnyObject,
                         "date": Date().timeIntervalSince1970 as AnyObject

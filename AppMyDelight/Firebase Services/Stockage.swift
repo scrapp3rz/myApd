@@ -11,14 +11,14 @@ import FirebaseStorage
 
 class Stockage {
     
-    func addPostImage(data: Data, completion: SuccessCompletion?) {
+    func addPostImage(reference: StorageReference, data: Data, completion: SuccessCompletion?){
         let idUnic = UUID().uuidString
         Ref().myPostImages.child(idUnic).putData(data, metadata: nil) { (meta, error) in
             if error == nil {
                 if let urlString = meta?.downloadURL()?.absoluteString {
                     completion?(true, urlString)
                 } else {
-                    completion!(false, nil)
+                    completion?(false, nil)
                 }
             } else {
                 completion?(false, error!.localizedDescription)

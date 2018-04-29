@@ -41,7 +41,7 @@ class User {
         self._forname = dict["forname"] as? String ?? ""
         self._lastname = dict["lastname"] as? String ?? ""
         self._description = dict["description"] as? String ?? ""
-        self._imageUrl = dict["imageURL"] as? String ?? ""
+        self._imageUrl = dict["imageUrl"] as? String ?? ""
         self._cookingLevel = dict["cookingLevel"] as? String ?? ""
         self._followers = dict["followers"] as? [String] ?? []
         self._following = dict["following"] as? [String] ?? []
