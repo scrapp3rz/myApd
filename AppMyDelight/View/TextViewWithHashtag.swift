@@ -31,8 +31,9 @@ class TextViewWithHashtag: UITextView {
         isScrollEnabled = false
     }
     
-    func setText(text: String) {
+    func setText(text: String, date: Double) {
         self.attributedString = NSMutableAttributedString(string: text)
+        self.attributedString?.append(NSAttributedString(string: "\n" + date.xTimeAgo(), attributes: [.font: UIFont.boldSystemFont(ofSize: 14), .foregroundColor: UIColor.darkGray]))
         self.nsString = NSString(string: text)
         
         let range = NSRange(location: 0, length: (self.nsString?.length)!)

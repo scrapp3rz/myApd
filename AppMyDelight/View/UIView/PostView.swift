@@ -78,7 +78,7 @@ class PostView: UIView {
         Posted_Image.addGestureRecognizer(tap)
         
         // setup du customtextview avec ## clickable
-        TextView.setText(text: self.post.text)
+        TextView.setText(text: self.post.text, date: self.post.date)
         
         
         

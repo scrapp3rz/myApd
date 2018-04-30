@@ -24,15 +24,20 @@ class FilController: UICollectionViewController, UICollectionViewDelegateFlowLay
 
     }
 
+    func sortAndReload() {
+        self.posts = self.posts.sorted(by: {$0.date > $1.date})
+        self.collectionView?.reloadData()
+        
+    }
+    
+    
     func getAllThePosts() {
         var usersToParse = ME.following
         usersToParse.append(ME.id)
         print(usersToParse)
         for user in usersToParse {
             BDD().getPost(user: user, completion: { (post) -> (Void) in
-                if post != nil {
-                    print("Post bien ajouté")
-                    
+                if post != nil {                    
                     self.posts.append(post!)
                     self.collectionView?.reloadData()
                 }
@@ -41,7 +46,6 @@ class FilController: UICollectionViewController, UICollectionViewDelegateFlowLay
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return posts.count
     }
 
@@ -56,9 +60,8 @@ class FilController: UICollectionViewController, UICollectionViewDelegateFlowLay
         let post = posts[indexPath.row]
         let largeur = collectionView.frame.width
         var hauteur = 150 + largeur
-        if post.text != "" {
-            hauteur += post.text.rect(largeur: collectionView.frame.width).height
-        }
+        let texte = post.text + "\n" + post.date.xTimeAgo()
+        hauteur += texte.rect(largeur: collectionView.frame.width).height
         return CGSize(width: largeur, height: hauteur)
     }
     
