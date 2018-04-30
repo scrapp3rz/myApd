@@ -9,44 +9,49 @@
 import UIKit
 
 
-class ProfileController: UICollectionViewController {
+class ProfileController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     
     var user: User?
     var posts = [Post]()
+    var postComplet = true
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let nibPost = UINib(nibName: POST_CELL, bundle: nil)
         let nibSquareImage = UINib(nibName: SQUARE_IMAGE_CELL, bundle: nil)
-        collectionView?.register(nibPost, forCellWithReuseIdentifier: POST_CELL)
+        collectionView?.delegate = self
+        collectionView?.register(PostCell.self, forCellWithReuseIdentifier: POST_CELL)
         collectionView?.register(nibSquareImage, forCellWithReuseIdentifier: SQUARE_IMAGE_CELL)
         
-        
-        // Do any additional setup after loading the view.
-        if user != nil {
+        downloadPosts()
+
+    }
+
+    func downloadPosts() {
+        var idToParse: String
+            if user != nil {
             title = user!.username
+                idToParse = user!.id
+            } else {
+                title = ME.username
+                idToParse = ME.id
+        }
+        BDD().getPost(user: idToParse) { (post) -> (Void) in
+            if post != nil {
+                self.posts.append(post!)
+                self.sortAndReload()
+            }
         }
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func sortAndReload() {
+        self.posts = self.posts.sorted(by: {$0.date > $1.date})
+        self.collectionView?.reloadData()
+        
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -54,18 +59,33 @@ class ProfileController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return posts.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
-        return cell
+        if postComplet {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: POST_CELL, for: indexPath) as! PostCell
+            cell.setup(fil: nil, profile: self, post: posts[indexPath.row])
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SQUARE_IMAGE_CELL, for: indexPath) as! SquareImageCell
+            cell.ImageView.download(imageUrl: posts[indexPath.row].imageUrl)
+            return cell
+        }
+
     }
 
-  
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if postComplet {
+            let largeur = collectionView.frame.width
+            let texteCompleted = posts[indexPath.row].text + "\n" + posts[indexPath.row].date.xTimeAgo()
+            let heightOfText = texteCompleted.rect(largeur: largeur - 20).height
+            let hauteur = 150 + largeur + heightOfText
+            return CGSize(width: largeur, height: hauteur)
+        } else {
+            let taille = collectionView.frame.width / 4
+            return CGSize(width: taille, height: taille)
+        }
+    }
 
 }
