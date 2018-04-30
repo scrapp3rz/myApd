@@ -91,12 +91,17 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 250)
+        let description = user?.description ?? ME.description
+        let heightOfDescription = description.rect(largeur: collectionView.frame.width - 40).height
+        let height = 320 + heightOfDescription
+        return CGSize(width: collectionView.frame.width, height: height)
         
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: PROFILE_HEADER, for: indexPath) as! ProfileHeader
+        header.setup(controller: self, user: user ?? ME)
+        
         return header
     }
 }
