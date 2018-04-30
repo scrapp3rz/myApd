@@ -37,14 +37,25 @@ class FilController: UICollectionViewController, UICollectionViewDelegateFlowLay
         print(usersToParse)
         for user in usersToParse {
             BDD().getPost(user: user, completion: { (post) -> (Void) in
-                if post != nil {                    
-                    self.posts.append(post!)
-                    self.collectionView?.reloadData()
+                if post != nil {
+                    self.checkIfPostExist(post: post!)
                 }
             })
         }
     }
 
+    func checkIfPostExist(post: Post) {
+        if let index = self.posts.index(where: {$0.id == post.id}) {
+            self.posts[index] = post
+        } else {
+            self.posts.append(post)
+        }
+        self.sortAndReload()
+    }
+    
+    
+    
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posts.count
     }
