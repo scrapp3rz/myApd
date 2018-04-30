@@ -21,9 +21,11 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
         super.viewDidLoad()
         let nibPost = UINib(nibName: POST_CELL, bundle: nil)
         let nibSquareImage = UINib(nibName: SQUARE_IMAGE_CELL, bundle: nil)
+        let reusableView = UINib(nibName: PROFILE_HEADER, bundle: nil)
         collectionView?.delegate = self
         collectionView?.register(PostCell.self, forCellWithReuseIdentifier: POST_CELL)
         collectionView?.register(nibSquareImage, forCellWithReuseIdentifier: SQUARE_IMAGE_CELL)
+        collectionView?.register(reusableView, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: PROFILE_HEADER)
         
         downloadPosts()
 
@@ -88,4 +90,61 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
         }
     }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 250)
+        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: PROFILE_HEADER, for: indexPath) as! ProfileHeader
+        return header
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AAC3106402F37F80DE0CB265 /* Pods_AppMyDelight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0174E126629C93C7FBA2B3 /* Pods_AppMyDelight.framework */; };
 		C111A8492094AA260028ECBE /* TextViewWithHashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C111A8482094AA250028ECBE /* TextViewWithHashtag.swift */; };
+		C119FFDC20977C6A005F9A9F /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C119FFDA20977C69005F9A9F /* ProfileHeader.swift */; };
+		C119FFDD20977C6A005F9A9F /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C119FFDB20977C69005F9A9F /* ProfileHeader.xib */; };
 		C1244BFF2088F3D300F85C2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1244BFE2088F3D300F85C2C /* AppDelegate.swift */; };
 		C1244C012088F3D300F85C2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1244C002088F3D300F85C2C /* ViewController.swift */; };
 		C1244C072088F3D300F85C2C /* AppMyDelight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1244C052088F3D300F85C2C /* AppMyDelight.xcdatamodeld */; };
@@ -72,6 +74,8 @@
 		2C0174E126629C93C7FBA2B3 /* Pods_AppMyDelight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppMyDelight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51F30630D4AAA2B5F3A3A7DC /* Pods-AppMyDelight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppMyDelight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppMyDelight/Pods-AppMyDelight.debug.xcconfig"; sourceTree = "<group>"; };
 		C111A8482094AA250028ECBE /* TextViewWithHashtag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWithHashtag.swift; sourceTree = "<group>"; };
+		C119FFDA20977C69005F9A9F /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		C119FFDB20977C69005F9A9F /* ProfileHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeader.xib; sourceTree = "<group>"; };
 		C1244BFB2088F3D300F85C2C /* AppMyDelight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppMyDelight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1244BFE2088F3D300F85C2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1244C002088F3D300F85C2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 				C1657ACC208F1610006799D6 /* SquareImageCell.swift */,
 				C1657ACD208F1610006799D6 /* SquareImageCell.xib */,
 				C1657AE0208FBDDA006799D6 /* PostCell.swift */,
+				C119FFDA20977C69005F9A9F /* ProfileHeader.swift */,
+				C119FFDB20977C69005F9A9F /* ProfileHeader.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -390,6 +396,7 @@
 			files = (
 				C1657AD3208F29DA006799D6 /* ResizerController.xib in Resources */,
 				C15C4E21208D0FF4005D1BEF /* CameraCell.xib in Resources */,
+				C119FFDD20977C6A005F9A9F /* ProfileHeader.xib in Resources */,
 				C158B722208E6BDD00D8D05C /* LibrairieCell.xib in Resources */,
 				C1244C0C2088F3D400F85C2C /* LaunchScreen.storyboard in Resources */,
 				C15C4E34208E3CF4005D1BEF /* ResizeController.xib in Resources */,
@@ -516,6 +523,7 @@
 				C1DCA494208B24EE00CCAAB9 /* Ingredient.swift in Sources */,
 				C1657AD2208F29DA006799D6 /* ResizerController.swift in Sources */,
 				C1DCA48A208948B100CCAAB9 /* BDD.swift in Sources */,
+				C119FFDC20977C6A005F9A9F /* ProfileHeader.swift in Sources */,
 				C1DCA4832089338900CCAAB9 /* ErrorDisplay.swift in Sources */,
 				C15C4E18208BD1B7005D1BEF /* MyNav.swift in Sources */,
 				C1244C012088F3D300F85C2C /* ViewController.swift in Sources */,
