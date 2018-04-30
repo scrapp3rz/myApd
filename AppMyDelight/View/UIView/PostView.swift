@@ -80,10 +80,28 @@ class PostView: UIView {
         // setup du customtextview avec ## clickable
         TextView.setText(text: self.post.text, date: self.post.date)
         
+        Profile_Image.isUserInteractionEnabled = true
+        Username_Label.isUserInteractionEnabled = true
+     //   let tapProfil = UITapGestureRecognizer(target: self, action: #selector(sendToProfile))
+        Profile_Image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sendToProfile)))
+        Username_Label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sendToProfile)))
         
         
         
         
+    }
+    
+    @objc func sendToProfile() {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        let controller = ProfileController(collectionViewLayout: layout)
+        controller.user = self.post.user
+        if filController != nil {
+            filController?.navigationController?.pushViewController(controller, animated: true)
+        } else if profileController != nil {
+            profileController?.navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     @objc func doubleTap() {
