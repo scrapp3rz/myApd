@@ -11,6 +11,8 @@
 		C111A8492094AA260028ECBE /* TextViewWithHashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C111A8482094AA250028ECBE /* TextViewWithHashtag.swift */; };
 		C119FFDC20977C6A005F9A9F /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C119FFDA20977C69005F9A9F /* ProfileHeader.swift */; };
 		C119FFDD20977C6A005F9A9F /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C119FFDB20977C69005F9A9F /* ProfileHeader.xib */; };
+		C119FFE02098656A005F9A9F /* ModificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C119FFDE2098656A005F9A9F /* ModificationController.swift */; };
+		C119FFE12098656A005F9A9F /* ModificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C119FFDF2098656A005F9A9F /* ModificationController.xib */; };
 		C1244BFF2088F3D300F85C2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1244BFE2088F3D300F85C2C /* AppDelegate.swift */; };
 		C1244C012088F3D300F85C2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1244C002088F3D300F85C2C /* ViewController.swift */; };
 		C1244C072088F3D300F85C2C /* AppMyDelight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1244C052088F3D300F85C2C /* AppMyDelight.xcdatamodeld */; };
@@ -76,6 +78,8 @@
 		C111A8482094AA250028ECBE /* TextViewWithHashtag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWithHashtag.swift; sourceTree = "<group>"; };
 		C119FFDA20977C69005F9A9F /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		C119FFDB20977C69005F9A9F /* ProfileHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeader.xib; sourceTree = "<group>"; };
+		C119FFDE2098656A005F9A9F /* ModificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModificationController.swift; sourceTree = "<group>"; };
+		C119FFDF2098656A005F9A9F /* ModificationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModificationController.xib; sourceTree = "<group>"; };
 		C1244BFB2088F3D300F85C2C /* AppMyDelight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppMyDelight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1244BFE2088F3D300F85C2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1244C002088F3D300F85C2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +271,8 @@
 				C15C4E15208BD191005D1BEF /* ProfileController.swift */,
 				C15C4E19208BD431005D1BEF /* SearchController.swift */,
 				C15C4E1A208BD431005D1BEF /* SearchController.xib */,
+				C119FFDE2098656A005F9A9F /* ModificationController.swift */,
+				C119FFDF2098656A005F9A9F /* ModificationController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -403,6 +409,7 @@
 				C15C4E12208BD15D005D1BEF /* PhotoController.xib in Resources */,
 				C1DCA49020894DDF00CCAAB9 /* UsernameView.xib in Resources */,
 				C1244C142088F42B00F85C2C /* GoogleService-Info.plist in Resources */,
+				C119FFE12098656A005F9A9F /* ModificationController.xib in Resources */,
 				C15C4E2B208E3208005D1BEF /* EffectController.xib in Resources */,
 				C1657AC9208EA360006799D6 /* FinishPostController.xib in Resources */,
 				C1657AD7208F4D64006799D6 /* fxController.xib in Resources */,
@@ -555,6 +562,7 @@
 				C1DCA495208B24EE00CCAAB9 /* Recipe.swift in Sources */,
 				C1DCA499208B420700CCAAB9 /* Constants.swift in Sources */,
 				C15C4E16208BD191005D1BEF /* ProfileController.swift in Sources */,
+				C119FFE02098656A005F9A9F /* ModificationController.swift in Sources */,
 				C1657AE3208FC0C4006799D6 /* PostView.swift in Sources */,
 				C1657AE1208FBDDA006799D6 /* PostCell.swift in Sources */,
 			);
