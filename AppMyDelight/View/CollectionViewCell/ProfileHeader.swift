@@ -63,7 +63,12 @@ class ProfileHeader: UICollectionReusableView {
     
     
     @IBAction func Button_Switched_On(_ sender: Any) {
-   
+        
+        if Button_Follow_Or_Change.titleLabel?.text == "Modifier" {
+            let newController = ModificationController()
+            controller?.navigationController?.pushViewController(newController, animated: true)
+        }
+        
     }
     
     @IBAction func Segment_Choosen(_ sender: Any) {

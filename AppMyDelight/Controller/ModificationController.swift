@@ -24,9 +24,24 @@ class ModificationController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Image_Fond.download(imageUrl: ME.imageUrl)
+        Profile_Image.download(imageUrl: ME.imageUrl)
+        Username_TextField.text = ME.username
+        if ME.forname == "" {
+            Forname_TextField.placeholder = "Votre prénom"
+        } else {
+            Forname_TextField.text = ME.forname
+        }
 
+        if ME.lastname == "" {
+            LastName_TextField.placeholder = "Votre nom"
+        } else {
+            LastName_TextField.text = ME.lastname
+        }
+        Description_TextView.text = ME.description
     }
 
+    
 
 
    
