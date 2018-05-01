@@ -18,6 +18,7 @@
                 <outlet property="Image_Fond" destination="O7h-D6-woT" id="Y5M-PF-zXe"/>
                 <outlet property="LastName_TextField" destination="qWA-LZ-Ft3" id="Oz7-rr-XwX"/>
                 <outlet property="Profile_Image" destination="4B0-mX-Tcj" id="6GM-CS-VHi"/>
+                <outlet property="Top_Constraint" destination="cIy-Pl-FW6" id="vd4-jI-YvD"/>
                 <outlet property="Username_TextField" destination="dpl-2z-Xdb" id="hVj-C5-DwF"/>
                 <outlet property="Validation_Button" destination="tdS-IY-O6Y" id="VAS-RP-llf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
