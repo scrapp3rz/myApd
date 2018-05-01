@@ -12,8 +12,9 @@ import FirebaseStorage
 class Stockage {
     
     func addPostImage(reference: StorageReference, data: Data, completion: SuccessCompletion?){
-        let idUnic = UUID().uuidString
-        Ref().myPostImages.child(idUnic).putData(data, metadata: nil) { (meta, error) in
+     //   let idUnic = UUID().uuidString
+     //   Ref().myPostImages.child(idUnic)
+            reference.putData(data, metadata: nil) { (meta, error) in
             if error == nil {
                 if let urlString = meta?.downloadURL()?.absoluteString {
                     completion?(true, urlString)
@@ -25,4 +26,11 @@ class Stockage {
             }
         }
     }
+    
+    
+    
+    
+    
+    
+    
 }

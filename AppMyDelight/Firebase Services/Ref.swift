@@ -17,10 +17,10 @@ class Ref {
     
     // DataBase
     
-    var rootUser: DatabaseReference { return bdd.child("user")}
+    var rootUser: DatabaseReference { return bdd.child("user") }
     var postRoot: DatabaseReference { return bdd.child("posts") }
     var myPostsBDD: DatabaseReference { return postRoot.child(ME.id) }
-    var hashtagRoot: DatabaseReference { return bdd.child("hashtag")}
+    var hashtagRoot: DatabaseReference { return bdd.child("hashtag") }
 
 
     func specificUser(id: String) -> DatabaseReference {
@@ -36,7 +36,9 @@ class Ref {
     }
     
     // Stockage
-    var rootPostImage: StorageReference { return stockage.child("posts")}
+    var rootPostImage: StorageReference { return stockage.child("posts") }
     var myPostImages: StorageReference { return rootPostImage.child(ME.id) }
+    var rootProfileImage: StorageReference { return stockage.child("profile") }
+    var myProfileImage: StorageReference { return rootProfileImage.child(ME.id) }
     
 }

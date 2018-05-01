@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ModificationController: UIViewController {
+class ModificationController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
+    @IBOutlet weak var Width_Constraint: NSLayoutConstraint!
+    @IBOutlet weak var ScrollView: UIScrollView!
     @IBOutlet weak var Image_Fond: UIImageView!
     @IBOutlet weak var Profile_Image: roundedImage!
     @IBOutlet weak var Username_TextField: UITextField!
@@ -19,20 +21,36 @@ class ModificationController: UIViewController {
     @IBOutlet weak var LastName_TextField: UITextField!
     @IBOutlet weak var Description_TextView: UITextView!
     @IBOutlet weak var Validation_Button: MydelButton!
-    @IBOutlet weak var Top_Constraint: NSLayoutConstraint!
+  //  @IBOutlet weak var Top_Constraint: NSLayoutConstraint!
+    @IBOutlet weak var Deconnection_Button: UIButton!
     
     
     var canCreateUsername = false
+    var picker: UIImagePickerController?
+    var heightOfScroll: CGFloat?
     
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Width_Constraint.constant = view.frame.width
+        heightOfScroll = Deconnection_Button.frame.maxY + 60
+        ScrollView.contentSize = CGSize(width: view.frame.width, height: heightOfScroll!)
+        ScrollView.layoutIfNeeded()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        picker = UIImagePickerController()
+        picker?.allowsEditing = true
+        picker?.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardIn), name: Notification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardOut), name: Notification.Name.UIKeyboardWillHide, object: nil)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cleanKeyboard)))
         Image_Fond.download(imageUrl: ME.imageUrl)
         Profile_Image.download(imageUrl: ME.imageUrl)
+        Profile_Image.isUserInteractionEnabled = true
+        Profile_Image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(takePhoto)))
         Username_TextField.text = ME.username
         Username_TextField.addTarget(self, action: #selector(textUpdated(_:)), for: .editingChanged)
         if ME.forname == "" {
@@ -48,24 +66,53 @@ class ModificationController: UIViewController {
         }
         Description_TextView.text = ME.description
     }
-/*
-    func animate(constante: CGFloat) {
-        UIView.animate(withDuration: 0.35) {
-            self.contrainteDuBas.constant = constante
+    
+    @objc func takePhoto() {
+        ErrorDisplay().camera(controller: self, picker: picker!)
+    }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        var myImage: UIImage?
+        if let imageChanged = info[UIImagePickerControllerEditedImage] as? UIImage {
+            myImage = imageChanged
+        } else if let imageOriginale = info[UIImagePickerControllerEditedImage] as? UIImage {
+            myImage = imageOriginale
+        }
+        guard myImage != nil, let data = UIImageJPEGRepresentation(myImage!, 0.3) else { return }
+        view.createActivityIndicator()
+        Stockage().addPostImage(reference: Ref().myProfileImage, data: data) { (success, urlString) -> (Void) in
+            self.view.removeActivityIndicator()
+            guard let result = success, result == true, urlString != nil else { return }
+            BDD().updateUser(dict: (["imageUrl": urlString!] as AnyObject) as! [String : AnyObject], completion: { (user) -> (Void) in
+                if user != nil {
+                    ME = user!
+                    self.Image_Fond.download(imageUrl: ME.imageUrl)
+                    self.Profile_Image.download(imageUrl: ME.imageUrl)
+                    self.picker?.dismiss(animated: true, completion: nil)
+                }
+            })
         }
     }
-  */
+
     @objc func keyboardIn(notification: Notification) {
-        if let heightOfKeyboard = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
+        if let heightOfKeyboard = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height, heightOfScroll != nil {
             UIView.animate(withDuration: 0.3, animations: {
-                self.Top_Constraint.constant -= heightOfKeyboard / 1.5
+                self.ScrollView.contentSize = CGSize(width: self.view.frame.width, height: self.heightOfScroll! + heightOfKeyboard)
             })
         }
     }
     
     @objc func keyboardOut(notification: Notification) {
-        UIView.animate(withDuration: 0.3) {
-            self.Top_Constraint.constant = 10
+        if heightOfScroll != nil {
+            UIView.animate(withDuration: 0.3) {
+                self.ScrollView.contentSize = CGSize(width: self.view.frame.width, height: self.heightOfScroll!)
+            }
         }
     }
     
@@ -120,6 +167,7 @@ class ModificationController: UIViewController {
     }
     
     @IBAction func Deconnexion_Action(_ sender: Any) {
+        ErrorDisplay().deconnection(controller: self)
     }
     
     
