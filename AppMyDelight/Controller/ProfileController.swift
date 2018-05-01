@@ -42,7 +42,12 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
         }
         BDD().getPost(user: idToParse) { (post) -> (Void) in
             if post != nil {
-                self.posts.append(post!)
+                if let postExist = self.posts.index(where: {$0.id == post!.id}) {
+                    print("Ce poste existe déjà")
+                    self.posts[postExist] = post!
+                } else {
+                    self.posts.append(post!)
+                }
                 self.sortAndReload()
             }
         }
