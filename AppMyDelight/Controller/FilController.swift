@@ -12,16 +12,19 @@ import UIKit
 class FilController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var posts = [Post]()
+    var hashtag: Hashtag?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundColor = .white
-        
         collectionView?.register(PostCell.self, forCellWithReuseIdentifier: POST_CELL)
         collectionView?.delegate = self
-        getAllThePosts()
-
+        if hashtag != nil {
+            title = hashtag!.name
+        } else {
+            getAllThePosts()
+        }
     }
 
     func sortAndReload() {

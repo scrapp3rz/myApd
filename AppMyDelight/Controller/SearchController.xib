@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchController" customModule="AppMyDelight" customModuleProvider="target">
             <connections>
+                <outlet property="Search_Bar" destination="29s-FS-t6K" id="gSy-1p-wAh"/>
                 <outlet property="Segment" destination="el5-fM-RRg" id="Zbp-PK-rZd"/>
                 <outlet property="TableView" destination="EFG-Pk-bcz" id="ysd-hx-K2u"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,8 +23,16 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EFG-Pk-bcz">
+                    <rect key="frame" x="0.0" y="121" width="375" height="546"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="29s-FS-t6K">
+                    <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="el5-fM-RRg">
-                    <rect key="frame" x="20" y="20" width="335" height="28"/>
+                    <rect key="frame" x="20" y="84" width="335" height="28"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="27" id="PVR-BQ-a5Q"/>
                     </constraints>
@@ -35,22 +44,22 @@
                         <action selector="Segment_Choosen:" destination="-1" eventType="valueChanged" id="9gC-Vm-xaQ"/>
                     </connections>
                 </segmentedControl>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EFG-Pk-bcz">
-                    <rect key="frame" x="0.0" y="57" width="375" height="610"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="el5-fM-RRg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="3tO-4Y-PlG"/>
+                <constraint firstItem="29s-FS-t6K" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6kD-Sk-7AM"/>
                 <constraint firstItem="EFG-Pk-bcz" firstAttribute="top" secondItem="el5-fM-RRg" secondAttribute="bottom" constant="10" id="Ctt-NQ-o01"/>
+                <constraint firstItem="29s-FS-t6K" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="QqX-13-cDb"/>
                 <constraint firstItem="EFG-Pk-bcz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ti1-SZ-PF3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EFG-Pk-bcz" secondAttribute="trailing" id="WM3-ui-QDY"/>
-                <constraint firstItem="el5-fM-RRg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kQd-ZI-5H6"/>
+                <constraint firstItem="29s-FS-t6K" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hls-N7-GEV"/>
+                <constraint firstItem="el5-fM-RRg" firstAttribute="top" secondItem="29s-FS-t6K" secondAttribute="bottom" constant="8" id="jkn-Dm-3lt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="el5-fM-RRg" secondAttribute="trailing" constant="20" id="npe-lG-jbZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="EFG-Pk-bcz" secondAttribute="bottom" id="rcy-h2-QwA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>
     </objects>
 </document>
