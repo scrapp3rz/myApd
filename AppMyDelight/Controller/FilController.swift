@@ -21,6 +21,7 @@ class FilController: UICollectionViewController, UICollectionViewDelegateFlowLay
         collectionView?.register(PostCell.self, forCellWithReuseIdentifier: POST_CELL)
         collectionView?.delegate = self
         if hashtag != nil {
+            getHash()
             title = hashtag!.name
         } else {
             getAllThePosts()
@@ -34,18 +35,24 @@ class FilController: UICollectionViewController, UICollectionViewDelegateFlowLay
     }
     
     
+    func getHash() {
+        BDD().getPostsFromHashtag(dict: hashtag!.posts) { (post) -> (Void) in
+            if post != nil {
+                self.checkIfPostExist(post: post!)
+            }
+        }
+    }
+    
+    
+    
+    
     func getAllThePosts() {
         var usersToParse = ME.following
         usersToParse.append(ME.id)
         for user in usersToParse {
             BDD().getPost(user: user, completion: { (post) -> (Void) in
                 if post != nil {
-                    if let index = self.posts.index(where: {$0.id == post!.id}) {
-                        self.posts[index] = post!
-                    } else {
-                        self.posts.append(post!)
-                    }
-                    self.sortAndReload()
+                    self.checkIfPostExist(post: post!)
                     }
                 })
             }

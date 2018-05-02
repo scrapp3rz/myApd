@@ -31,6 +31,11 @@ class Ref {
         return hashtagRoot.child(hashtag)
     }
     
+    func specificPost(key: String, value: String) -> DatabaseReference {
+        return postSpecificUser(id: value).child(key)
+    }
+    
+    
     func postSpecificUser(id: String) -> DatabaseReference {
         return postRoot.child(id)
     }

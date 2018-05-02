@@ -87,20 +87,74 @@ class BDD {
         getUser(id: user) { (util) -> (Void) in
             if util != nil {
                 Ref().postSpecificUser(id: user).observe(.childAdded, with: { (snapshot) in
-                    print(snapshot)
-                    let postId = snapshot.key
-                    if let dict = snapshot.value as? [String: AnyObject] {
-                        let newPost = Post(ref: snapshot.ref, id: postId, user: util!, comments: [], dict: dict)
-                        completion?(newPost)
-                    } else {
-                        completion?(nil)
-                    }
-                    
+                    completion?(self.convertPost(user: util!, snapshot: snapshot))
                 })
             }
         }
     }
     
+    func convertPost(user: User, snapshot: DataSnapshot) -> Post? {
+        let postId = snapshot.key
+        if let dict = snapshot.value as? [String: AnyObject] {
+            return Post(ref: snapshot.ref, id: postId, user: user, comments: [], dict: dict)
+        } else {
+            return nil
+        }
+    }
+    
+    
+    func getPostsFromHashtag(dict: [String: String], completion: @escaping PostCompletion) {
+        for (key, value) in dict {
+            getUser(id: value, completion: { (utilisateur) -> (Void) in
+                if let user = utilisateur {
+                    Ref().specificPost(key: key, value: value).observe(.value, with: { (snapshot) in
+                        completion(self.convertPost(user: utilisateur!, snapshot: snapshot))
+                    })
+                } else {
+                    completion(nil)
+                }
+            })
+            
+        }
+    }
     
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
