@@ -53,6 +53,11 @@
 		C1657AE1208FBDDA006799D6 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1657AE0208FBDDA006799D6 /* PostCell.swift */; };
 		C1657AE3208FC0C4006799D6 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1657AE2208FC0C4006799D6 /* PostView.swift */; };
 		C1657AE5208FC0D5006799D6 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1657AE4208FC0D5006799D6 /* PostView.xib */; };
+		C19EAC862099B9BE005B8917 /* Hashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19EAC852099B9BD005B8917 /* Hashtag.swift */; };
+		C19EAC8A2099C5F9005B8917 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19EAC882099C5F9005B8917 /* UserCell.swift */; };
+		C19EAC8B2099C5F9005B8917 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C19EAC892099C5F9005B8917 /* UserCell.xib */; };
+		C19EAC8E2099C60D005B8917 /* HashtagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19EAC8C2099C60D005B8917 /* HashtagCell.swift */; };
+		C19EAC8F2099C60D005B8917 /* HashtagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C19EAC8D2099C60D005B8917 /* HashtagCell.xib */; };
 		C1DCA47620891D4900CCAAB9 /* ConnexionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCA47520891D4900CCAAB9 /* ConnexionController.swift */; };
 		C1DCA4782089234700CCAAB9 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCA4772089234700CCAAB9 /* LogoView.swift */; };
 		C1DCA47B2089255B00CCAAB9 /* ConnexionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCA47A2089255B00CCAAB9 /* ConnexionView.swift */; };
@@ -122,6 +127,11 @@
 		C1657AE0208FBDDA006799D6 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		C1657AE2208FC0C4006799D6 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		C1657AE4208FC0D5006799D6 /* PostView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
+		C19EAC852099B9BD005B8917 /* Hashtag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hashtag.swift; sourceTree = "<group>"; };
+		C19EAC882099C5F9005B8917 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		C19EAC892099C5F9005B8917 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		C19EAC8C2099C60D005B8917 /* HashtagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagCell.swift; sourceTree = "<group>"; };
+		C19EAC8D2099C60D005B8917 /* HashtagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashtagCell.xib; sourceTree = "<group>"; };
 		C1DCA47520891D4900CCAAB9 /* ConnexionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnexionController.swift; sourceTree = "<group>"; };
 		C1DCA4772089234700CCAAB9 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		C1DCA47A2089255B00CCAAB9 /* ConnexionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnexionView.swift; sourceTree = "<group>"; };
@@ -251,6 +261,17 @@
 			path = Photo;
 			sourceTree = "<group>";
 		};
+		C19EAC872099C5C7005B8917 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C19EAC882099C5F9005B8917 /* UserCell.swift */,
+				C19EAC892099C5F9005B8917 /* UserCell.xib */,
+				C19EAC8C2099C60D005B8917 /* HashtagCell.swift */,
+				C19EAC8D2099C60D005B8917 /* HashtagCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		C1DCA4712088F7EB00CCAAB9 /* Plists */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +301,7 @@
 		C1DCA47320891CF900CCAAB9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C19EAC872099C5C7005B8917 /* TableViewCell */,
 				C15C4E1D208D0FCA005D1BEF /* CollectionViewCell */,
 				C1DCA47E2089260300CCAAB9 /* UIExtensions.swift */,
 				C1DCA48020892A3D00CCAAB9 /* MydelButton.swift */,
@@ -302,6 +324,7 @@
 				C1657ADA208FB887006799D6 /* ModelExtension.swift */,
 				C1657ADC208FBBE0006799D6 /* Post.swift */,
 				C1657ADE208FBC46006799D6 /* Comments.swift */,
+				C19EAC852099B9BD005B8917 /* Hashtag.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -404,7 +427,9 @@
 				C15C4E21208D0FF4005D1BEF /* CameraCell.xib in Resources */,
 				C119FFDD20977C6A005F9A9F /* ProfileHeader.xib in Resources */,
 				C158B722208E6BDD00D8D05C /* LibrairieCell.xib in Resources */,
+				C19EAC8F2099C60D005B8917 /* HashtagCell.xib in Resources */,
 				C1244C0C2088F3D400F85C2C /* LaunchScreen.storyboard in Resources */,
+				C19EAC8B2099C5F9005B8917 /* UserCell.xib in Resources */,
 				C15C4E34208E3CF4005D1BEF /* ResizeController.xib in Resources */,
 				C15C4E12208BD15D005D1BEF /* PhotoController.xib in Resources */,
 				C1DCA49020894DDF00CCAAB9 /* UsernameView.xib in Resources */,
@@ -534,11 +559,13 @@
 				C1DCA4832089338900CCAAB9 /* ErrorDisplay.swift in Sources */,
 				C15C4E18208BD1B7005D1BEF /* MyNav.swift in Sources */,
 				C1244C012088F3D300F85C2C /* ViewController.swift in Sources */,
+				C19EAC862099B9BE005B8917 /* Hashtag.swift in Sources */,
 				C15C4E33208E3CF4005D1BEF /* ResizeController.swift in Sources */,
 				C1DCA4882089479200CCAAB9 /* Ref.swift in Sources */,
 				C1657ADD208FBBE0006799D6 /* Post.swift in Sources */,
 				C1DCA48120892A3D00CCAAB9 /* MydelButton.swift in Sources */,
 				C1DCA47B2089255B00CCAAB9 /* ConnexionView.swift in Sources */,
+				C19EAC8E2099C60D005B8917 /* HashtagCell.swift in Sources */,
 				C1657ACE208F1610006799D6 /* SquareImageCell.swift in Sources */,
 				C1DCA48E20894DCF00CCAAB9 /* UsernameView.swift in Sources */,
 				C15C4E08208BD0D2005D1BEF /* MyTabBar.swift in Sources */,
@@ -554,6 +581,7 @@
 				C1DCA48C208948E700CCAAB9 /* TypeAlias.swift in Sources */,
 				C15C4E2A208E3208005D1BEF /* EffectController.swift in Sources */,
 				C1657AD6208F4D64006799D6 /* fxController.swift in Sources */,
+				C19EAC8A2099C5F9005B8917 /* UserCell.swift in Sources */,
 				C1657ADB208FB887006799D6 /* ModelExtension.swift in Sources */,
 				C15C4E20208D0FF4005D1BEF /* CameraCell.swift in Sources */,
 				C1657AD9208F615E006799D6 /* Stockage.swift in Sources */,

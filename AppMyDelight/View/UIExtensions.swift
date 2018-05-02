@@ -86,3 +86,34 @@ extension UIImageView {
     
     
 }
+
+
+extension UILabel {
+    
+    func attributedText(string1: String, string2: String)  {
+        let mutable = NSMutableAttributedString(string: string1, attributes: [.font: UIFont.boldSystemFont(ofSize: 16), .foregroundColor: UIColor.black])
+        mutable.append(NSAttributedString(string: string2, attributes: [.font: UIFont.systemFont(ofSize: 16), .foregroundColor: UIColor.darkGray]))
+        attributedText = mutable
+    }
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

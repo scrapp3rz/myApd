@@ -11,6 +11,6 @@ import UIKit
 typealias UserCompletion = (_ user: User?) -> (Void)
 typealias PostCompletion = (_ post: Post?) -> (Void)
 typealias SuccessCompletion = (_ success: Bool?,  _ erreur: String?) -> (Void)
-
+typealias HashtagCompletion = (_ hashtag: Hashtag?) -> (Void)
 
 

@@ -24,6 +24,13 @@ class BDD {
         }
     }
     
+    
+    func getAllUsers(completion: UserCompletion?) {
+        Ref().rootUser.observe(.childAdded) { (snapshot) in
+            completion?(User(snapshot: snapshot))
+        }
+    }
+    
     func usernameExists(username: String, completion: SuccessCompletion?) {
         Ref().rootUser.queryOrdered(byChild: "username").queryEqual(toValue: username).observeSingleEvent(of: .value) { (snapshot) in
             if !snapshot.exists() {
@@ -63,6 +70,18 @@ class BDD {
         Ref().specificHashtag(hashtag: word.codage()).updateChildValues([postId: ME.id])
         
     }
+   
+    func getHashtags(completion: HashtagCompletion?) {
+        Ref().hashtagRoot.observe(.childAdded) { (snapshot) in
+            if let dict = snapshot.value as? [String: String] {
+                let nameDecoded = snapshot.key.decodage()
+                let newHashtag = Hashtag(name: nameDecoded, posts: dict)
+                completion?(newHashtag)
+            }
+        }
+    }
+    
+    
     
     func getPost(user: String, completion: PostCompletion?) {
         getUser(id: user) { (util) -> (Void) in

@@ -31,9 +31,9 @@ class ProfileHeader: UICollectionReusableView {
     func setup(controller: ProfileController, user: User) {
         self.controller = controller
         self.user = user
-        Followers_Label.attributedText = attributedText(string1: String(user.followers.count), string2: "\n Abonnés")
-        Following_Label.attributedText = attributedText(string1: String(user.following.count), string2: "\n Abonnements")
-        Username_Label.attributedText = attributedText(string1: user.username, string2: "\n" + user.forname + " " + user.lastname)
+        Followers_Label.attributedText(string1: String(user.followers.count), string2: "\n Abonnés")
+        Following_Label.attributedText(string1: String(user.following.count), string2: "\n Abonnements")
+        Username_Label.attributedText(string1: user.username, string2: "\n" + user.forname + " " + user.lastname)
         TextView.setText(text: user.description, date: nil)
         Image_Fond.download(imageUrl: user.imageUrl)
         Profile_Image.download(imageUrl: user.imageUrl)
@@ -48,11 +48,7 @@ class ProfileHeader: UICollectionReusableView {
         
     }
     
-    func attributedText(string1: String, string2: String) -> NSMutableAttributedString {
-        let mutable = NSMutableAttributedString(string: string1, attributes: [.font: UIFont.boldSystemFont(ofSize: 16), .foregroundColor: UIColor.black])
-        mutable.append(NSAttributedString(string: string2, attributes: [.font: UIFont.systemFont(ofSize: 16), .foregroundColor: UIColor.darkGray]))
-        return mutable
-    }
+
     
     
     
