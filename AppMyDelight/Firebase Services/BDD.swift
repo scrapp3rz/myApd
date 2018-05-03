@@ -119,6 +119,16 @@ class BDD {
     }
     
     
+    func updatePost(postId: String, userId: String,  dict: [String: AnyObject]) {
+        Ref().specificPost(key: postId, value: userId).updateChildValues(dict)
+        
+    }
+    
+    
+    
+    
+    
+    
 }
 
 

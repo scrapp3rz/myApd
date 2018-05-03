@@ -25,6 +25,15 @@ class PostView: UIView {
     
     
     @IBAction func Button_Like_Action(_ sender: Any) {
+        var mylikes = self.post.likes
+        if Button_Like.imageView?.image == #imageLiteral(resourceName: "coeur_vide") {
+            mylikes.append(ME.id)
+        } else {
+            if let index = mylikes.index(of: ME.id) {
+                mylikes.remove(at: index)
+            }
+        }
+        addLikeAndNotif(myLikes: mylikes)
     }
     
     @IBAction func Button_Comments_Action(_ sender: Any) {
@@ -35,6 +44,16 @@ class PostView: UIView {
     var filController: FilController?
     var profileController: ProfileController?
     var imageViewHeart: UIImageView?
+    
+    
+    func addLikeAndNotif(myLikes: [String]) {
+        BDD().updatePost(postId: self.post.id, userId: self.post.user.id, dict: ["likes": myLikes as AnyObject])
+        BDD().getPostsFromHashtag(dict: [self.post.id: self.post.user.id]) { (post) -> (Void) in
+            if post != nil {
+                self.setup(post: post!, filController: self.filController, profileController: self.profileController)
+            }
+        }
+    }
     
     
     override init(frame: CGRect) {
@@ -92,6 +111,7 @@ class PostView: UIView {
     }
     
     @objc func sendToProfile() {
+        
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
@@ -105,6 +125,13 @@ class PostView: UIView {
     }
     
     @objc func doubleTap() {
+        
+        var myLikes = self.post.likes
+        if !myLikes.contains(ME.id) {
+            myLikes.append(ME.id)
+        }
+        addLikeAndNotif(myLikes: myLikes)
+        
         if imageViewHeart == nil {
             imageViewHeart = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.width / 2, height: frame.width / 2))
             imageViewHeart?.image = #imageLiteral(resourceName: "coeur_double_tap")

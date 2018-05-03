@@ -12,6 +12,7 @@ class TextViewWithHashtag: UITextView {
 
     var nsString: NSString?
     var attributedString: NSMutableAttributedString?
+    var hashtagColor = UIColor(red: 70 / 255, green: 130 / 255, blue: 190 / 255, alpha: 1)
     
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
@@ -43,7 +44,7 @@ class TextViewWithHashtag: UITextView {
         let words = text.components(separatedBy: [" ", "\n"])
         for word in words.filter({$0.hasPrefix("#")}) {
             let wordRange = nsString!.range(of: word)
-            attributedString?.addAttributes([.foregroundColor: UIColor.blue], range: wordRange)
+            attributedString?.addAttributes([.foregroundColor: hashtagColor], range: wordRange)
             attributedString?.addAttribute(NSAttributedStringKey(rawValue: "Hashtag"), value: 1, range: wordRange)
             attributedString?.addAttribute(NSAttributedStringKey(rawValue: "Clickable"), value: 1, range: wordRange)
         }

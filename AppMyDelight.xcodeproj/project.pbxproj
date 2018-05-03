@@ -19,6 +19,8 @@
 		C1244C092088F3D400F85C2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1244C082088F3D400F85C2C /* Assets.xcassets */; };
 		C1244C0C2088F3D400F85C2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1244C0A2088F3D400F85C2C /* LaunchScreen.storyboard */; };
 		C1244C142088F42B00F85C2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1244C132088F42B00F85C2C /* GoogleService-Info.plist */; };
+		C157DB4E209B92C00047F766 /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB4C209B92C00047F766 /* CommentController.swift */; };
+		C157DB4F209B92C00047F766 /* CommentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C157DB4D209B92C00047F766 /* CommentController.xib */; };
 		C158B721208E6BDD00D8D05C /* LibrairieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C158B71F208E6BDD00D8D05C /* LibrairieCell.swift */; };
 		C158B722208E6BDD00D8D05C /* LibrairieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C158B720208E6BDD00D8D05C /* LibrairieCell.xib */; };
 		C15C4E08208BD0D2005D1BEF /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15C4E07208BD0D2005D1BEF /* MyTabBar.swift */; };
@@ -93,6 +95,8 @@
 		C1244C0B2088F3D400F85C2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1244C0D2088F3D400F85C2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1244C132088F42B00F85C2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C157DB4C209B92C00047F766 /* CommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
+		C157DB4D209B92C00047F766 /* CommentController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentController.xib; sourceTree = "<group>"; };
 		C158B71F208E6BDD00D8D05C /* LibrairieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrairieCell.swift; sourceTree = "<group>"; };
 		C158B720208E6BDD00D8D05C /* LibrairieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibrairieCell.xib; sourceTree = "<group>"; };
 		C15C4E07208BD0D2005D1BEF /* MyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
@@ -294,6 +298,8 @@
 				C15C4E1A208BD431005D1BEF /* SearchController.xib */,
 				C119FFDE2098656A005F9A9F /* ModificationController.swift */,
 				C119FFDF2098656A005F9A9F /* ModificationController.xib */,
+				C157DB4C209B92C00047F766 /* CommentController.swift */,
+				C157DB4D209B92C00047F766 /* CommentController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -441,6 +447,7 @@
 				C1DCA47D2089257C00CCAAB9 /* ConnexionView.xib in Resources */,
 				C1244C092088F3D400F85C2C /* Assets.xcassets in Resources */,
 				C1657ACF208F1610006799D6 /* SquareImageCell.xib in Resources */,
+				C157DB4F209B92C00047F766 /* CommentController.xib in Resources */,
 				C1657AE5208FC0D5006799D6 /* PostView.xib in Resources */,
 				C15C4E1C208BD431005D1BEF /* SearchController.xib in Resources */,
 			);
@@ -587,6 +594,7 @@
 				C1657AD9208F615E006799D6 /* Stockage.swift in Sources */,
 				C1DCA4852089471400CCAAB9 /* User.swift in Sources */,
 				C1244BFF2088F3D300F85C2C /* AppDelegate.swift in Sources */,
+				C157DB4E209B92C00047F766 /* CommentController.swift in Sources */,
 				C1DCA495208B24EE00CCAAB9 /* Recipe.swift in Sources */,
 				C1DCA499208B420700CCAAB9 /* Constants.swift in Sources */,
 				C15C4E16208BD191005D1BEF /* ProfileController.swift in Sources */,

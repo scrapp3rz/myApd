@@ -84,6 +84,7 @@ class ModificationController: UIViewController, UIImagePickerControllerDelegate,
         } else if let imageOriginale = info[UIImagePickerControllerEditedImage] as? UIImage {
             myImage = imageOriginale
         }
+        self.picker?.dismiss(animated: true, completion: nil)
         guard myImage != nil, let data = UIImageJPEGRepresentation(myImage!, 0.3) else { return }
         view.createActivityIndicator()
         Stockage().addPostImage(reference: Ref().myProfileImage, data: data) { (success, urlString) -> (Void) in
@@ -94,7 +95,6 @@ class ModificationController: UIViewController, UIImagePickerControllerDelegate,
                     ME = user!
                     self.Image_Fond.download(imageUrl: ME.imageUrl)
                     self.Profile_Image.download(imageUrl: ME.imageUrl)
-                    self.picker?.dismiss(animated: true, completion: nil)
                 }
             })
         }

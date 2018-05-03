@@ -23,6 +23,7 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
         let nibSquareImage = UINib(nibName: SQUARE_IMAGE_CELL, bundle: nil)
         let reusableView = UINib(nibName: PROFILE_HEADER, bundle: nil)
         collectionView?.delegate = self
+        collectionView?.backgroundColor = .white
         collectionView?.register(PostCell.self, forCellWithReuseIdentifier: POST_CELL)
         collectionView?.register(nibSquareImage, forCellWithReuseIdentifier: SQUARE_IMAGE_CELL)
         collectionView?.register(reusableView, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: PROFILE_HEADER)
@@ -31,6 +32,13 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
 
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        collectionView?.reloadData()
+    }
+    
+    
+    
     func downloadPosts() {
         var idToParse: String
             if user != nil {
