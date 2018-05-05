@@ -40,6 +40,11 @@ class Ref {
         return postRoot.child(id)
     }
     
+    func commentSinceRef(ref: DatabaseReference) -> DatabaseReference {
+        return ref.child("Comments")
+    }
+    
+    
     // Stockage
     var rootPostImage: StorageReference { return stockage.child("posts") }
     var myPostImages: StorageReference { return rootPostImage.child(ME.id) }

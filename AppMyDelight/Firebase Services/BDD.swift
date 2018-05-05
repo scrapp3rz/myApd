@@ -124,9 +124,30 @@ class BDD {
         
     }
     
+    func sendComment(ref: DatabaseReference, dict: [String: AnyObject]) {
+        Ref().commentSinceRef(ref: ref).childByAutoId().updateChildValues(dict)
+        
+    }
     
+    func getComment(ref: DatabaseReference, completion: CommentCompletion?) {
     
-    
+        Ref().commentSinceRef(ref: ref).observe(.childAdded) { (snapshot) in
+            if let dict = snapshot.value as? [String: AnyObject] {
+                if let userId = dict["user"] as? String {
+                    self.getUser(id: userId, completion: { (user) -> (Void) in
+                        if user != nil {
+                            let newComment = Comments(ref: snapshot.ref, id: snapshot.key, user: user!, dict: dict)
+                            completion?(newComment)
+                        } else {
+                            completion?(nil)
+                        }
+                    })
+                }
+            } else {
+                completion?(nil)
+            }
+        }
+    }
     
     
 }

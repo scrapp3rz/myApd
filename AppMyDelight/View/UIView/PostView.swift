@@ -37,7 +37,20 @@ class PostView: UIView {
     }
     
     @IBAction func Button_Comments_Action(_ sender: Any) {
+        
+        let controller = CommentController()
+        controller.comments = self.post.comments
+        controller.post = self.post
+        if filController != nil {
+            filController?.navigationController?.pushViewController(controller, animated: true)
+            } else if profileController != nil {
+            profileController?.navigationController?.pushViewController(controller, animated: true)
+        }
+        
     }
+    
+    
+    
     
     var view: UIView!
     var post: Post!

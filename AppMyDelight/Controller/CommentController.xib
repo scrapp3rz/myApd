@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommentController" customModule="AppMyDelight" customModuleProvider="target">
             <connections>
                 <outlet property="Bottom_Constraint" destination="ysV-Cs-BQO" id="it9-2V-jXO"/>
+                <outlet property="Height_Text_Zone" destination="pKd-TS-CKi" id="Yrj-mj-Vsw"/>
                 <outlet property="Send_Button" destination="7aq-5W-fTm" id="xVc-Pn-8Do"/>
                 <outlet property="TableView" destination="cpW-IR-aF7" id="Exc-s5-k2R"/>
                 <outlet property="TextView" destination="NM9-0f-Sqv" id="dY7-KM-Lwp"/>
@@ -28,13 +29,19 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ou-4q-Ser">
                     <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                     <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NM9-0f-Sqv">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NM9-0f-Sqv" customClass="TextViewComment" customModule="AppMyDelight" customModuleProvider="target">
                             <rect key="frame" x="8" y="8" width="267" height="44"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSW-rI-IwN">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="4F4-CK-Zge"/>
+                            </constraints>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aq-5W-fTm" customClass="MydelButton" customModule="AppMyDelight" customModuleProvider="target">
                             <rect key="frame" x="285" y="10" width="80" height="30"/>
                             <constraints>
@@ -52,6 +59,9 @@
                         <constraint firstItem="7aq-5W-fTm" firstAttribute="top" secondItem="7Ou-4q-Ser" secondAttribute="top" constant="10" id="6EN-X8-fEo"/>
                         <constraint firstItem="NM9-0f-Sqv" firstAttribute="leading" secondItem="7Ou-4q-Ser" secondAttribute="leading" constant="8" id="GuV-gl-eET"/>
                         <constraint firstAttribute="trailing" secondItem="7aq-5W-fTm" secondAttribute="trailing" constant="10" id="Kqa-lI-aKt"/>
+                        <constraint firstItem="sSW-rI-IwN" firstAttribute="top" secondItem="7Ou-4q-Ser" secondAttribute="top" id="Lgw-W5-w6b"/>
+                        <constraint firstAttribute="trailing" secondItem="sSW-rI-IwN" secondAttribute="trailing" id="WMc-Ag-IM6"/>
+                        <constraint firstItem="sSW-rI-IwN" firstAttribute="leading" secondItem="7Ou-4q-Ser" secondAttribute="leading" id="Xna-YL-Imo"/>
                         <constraint firstAttribute="bottom" secondItem="NM9-0f-Sqv" secondAttribute="bottom" constant="8" id="cw2-pX-KvT"/>
                         <constraint firstItem="NM9-0f-Sqv" firstAttribute="top" secondItem="7Ou-4q-Ser" secondAttribute="top" constant="8" id="l8Z-9d-kdy"/>
                         <constraint firstItem="7aq-5W-fTm" firstAttribute="leading" secondItem="NM9-0f-Sqv" secondAttribute="trailing" constant="10" id="pEP-nx-Wd1"/>

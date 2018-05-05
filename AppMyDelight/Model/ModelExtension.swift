@@ -21,10 +21,10 @@ extension String {
         return removingPercentEncoding ?? self
     }
     
-    func rect(largeur: CGFloat) -> CGRect {
+    func rect(largeur: CGFloat, font: UIFont) -> CGRect {
         let size = CGSize(width: largeur, height: .greatestFiniteMagnitude)
         let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-        return NSString(string: self).boundingRect(with: size, options: options, attributes: [.font: UIFont.systemFont(ofSize: 17)], context: nil)
+        return NSString(string: self).boundingRect(with: size, options: options, attributes: [.font: font], context: nil)
         
         
     }

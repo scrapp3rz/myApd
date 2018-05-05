@@ -21,6 +21,9 @@
 		C1244C142088F42B00F85C2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1244C132088F42B00F85C2C /* GoogleService-Info.plist */; };
 		C157DB4E209B92C00047F766 /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB4C209B92C00047F766 /* CommentController.swift */; };
 		C157DB4F209B92C00047F766 /* CommentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C157DB4D209B92C00047F766 /* CommentController.xib */; };
+		C157DB51209C529D0047F766 /* TextViewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB50209C529D0047F766 /* TextViewComment.swift */; };
+		C157DB54209DA6E00047F766 /* CommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB52209DA6E00047F766 /* CommentsCell.swift */; };
+		C157DB55209DA6E00047F766 /* CommentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C157DB53209DA6E00047F766 /* CommentsCell.xib */; };
 		C158B721208E6BDD00D8D05C /* LibrairieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C158B71F208E6BDD00D8D05C /* LibrairieCell.swift */; };
 		C158B722208E6BDD00D8D05C /* LibrairieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C158B720208E6BDD00D8D05C /* LibrairieCell.xib */; };
 		C15C4E08208BD0D2005D1BEF /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15C4E07208BD0D2005D1BEF /* MyTabBar.swift */; };
@@ -97,6 +100,9 @@
 		C1244C132088F42B00F85C2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C157DB4C209B92C00047F766 /* CommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
 		C157DB4D209B92C00047F766 /* CommentController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentController.xib; sourceTree = "<group>"; };
+		C157DB50209C529D0047F766 /* TextViewComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewComment.swift; sourceTree = "<group>"; };
+		C157DB52209DA6E00047F766 /* CommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCell.swift; sourceTree = "<group>"; };
+		C157DB53209DA6E00047F766 /* CommentsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsCell.xib; sourceTree = "<group>"; };
 		C158B71F208E6BDD00D8D05C /* LibrairieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrairieCell.swift; sourceTree = "<group>"; };
 		C158B720208E6BDD00D8D05C /* LibrairieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibrairieCell.xib; sourceTree = "<group>"; };
 		C15C4E07208BD0D2005D1BEF /* MyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
@@ -272,6 +278,8 @@
 				C19EAC892099C5F9005B8917 /* UserCell.xib */,
 				C19EAC8C2099C60D005B8917 /* HashtagCell.swift */,
 				C19EAC8D2099C60D005B8917 /* HashtagCell.xib */,
+				C157DB52209DA6E00047F766 /* CommentsCell.swift */,
+				C157DB53209DA6E00047F766 /* CommentsCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -314,6 +322,7 @@
 				C1DCA4792089250B00CCAAB9 /* UIView */,
 				C1657ACA208EA5E0006799D6 /* roundedImage.swift */,
 				C111A8482094AA250028ECBE /* TextViewWithHashtag.swift */,
+				C157DB50209C529D0047F766 /* TextViewComment.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -446,6 +455,7 @@
 				C1657AD7208F4D64006799D6 /* fxController.xib in Resources */,
 				C1DCA47D2089257C00CCAAB9 /* ConnexionView.xib in Resources */,
 				C1244C092088F3D400F85C2C /* Assets.xcassets in Resources */,
+				C157DB55209DA6E00047F766 /* CommentsCell.xib in Resources */,
 				C1657ACF208F1610006799D6 /* SquareImageCell.xib in Resources */,
 				C157DB4F209B92C00047F766 /* CommentController.xib in Resources */,
 				C1657AE5208FC0D5006799D6 /* PostView.xib in Resources */,
@@ -553,6 +563,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C157DB51209C529D0047F766 /* TextViewComment.swift in Sources */,
 				C1657AC8208EA360006799D6 /* FinishPostController.swift in Sources */,
 				C1DCA4782089234700CCAAB9 /* LogoView.swift in Sources */,
 				C158B721208E6BDD00D8D05C /* LibrairieCell.swift in Sources */,
@@ -563,6 +574,7 @@
 				C1657AD2208F29DA006799D6 /* ResizerController.swift in Sources */,
 				C1DCA48A208948B100CCAAB9 /* BDD.swift in Sources */,
 				C119FFDC20977C6A005F9A9F /* ProfileHeader.swift in Sources */,
+				C157DB54209DA6E00047F766 /* CommentsCell.swift in Sources */,
 				C1DCA4832089338900CCAAB9 /* ErrorDisplay.swift in Sources */,
 				C15C4E18208BD1B7005D1BEF /* MyNav.swift in Sources */,
 				C1244C012088F3D300F85C2C /* ViewController.swift in Sources */,

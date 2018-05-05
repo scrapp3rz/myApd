@@ -93,7 +93,7 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
         if postComplet {
             let largeur = collectionView.frame.width
             let texteCompleted = posts[indexPath.row].text + "\n" + posts[indexPath.row].date.xTimeAgo()
-            let heightOfText = texteCompleted.rect(largeur: largeur - 20).height
+            let heightOfText = texteCompleted.rect(largeur: largeur - 20, font: UIFont.systemFont(ofSize: 18)).height
             let hauteur = 150 + largeur + heightOfText
             return CGSize(width: largeur, height: hauteur)
         } else {
@@ -104,7 +104,7 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         let description = user?.description ?? ME.description
-        let heightOfDescription = description.rect(largeur: collectionView.frame.width - 40).height
+        let heightOfDescription = description.rect(largeur: collectionView.frame.width - 40, font: UIFont.systemFont(ofSize: 18)).height
         let height = 320 + heightOfDescription
         return CGSize(width: collectionView.frame.width, height: height)
         

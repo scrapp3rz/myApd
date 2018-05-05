@@ -86,7 +86,7 @@ class FilController: UICollectionViewController, UICollectionViewDelegateFlowLay
         let largeur = collectionView.frame.width
         var hauteur = 150 + largeur
         let texte = post.text + "\n" + post.date.xTimeAgo()
-        hauteur += texte.rect(largeur: collectionView.frame.width).height
+        hauteur += texte.rect(largeur: collectionView.frame.width, font: UIFont.systemFont(ofSize: 18)).height
         return CGSize(width: largeur, height: hauteur)
     }
     
