@@ -26,6 +26,7 @@
 		C157DB55209DA6E00047F766 /* CommentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C157DB53209DA6E00047F766 /* CommentsCell.xib */; };
 		C157DB58209F3F9B0047F766 /* PostUnicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB56209F3F9B0047F766 /* PostUnicController.swift */; };
 		C157DB59209F3F9B0047F766 /* PostUnicController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C157DB57209F3F9B0047F766 /* PostUnicController.xib */; };
+		C157DB5B20A0E3890047F766 /* Notifs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB5A20A0E3880047F766 /* Notifs.swift */; };
 		C158B721208E6BDD00D8D05C /* LibrairieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C158B71F208E6BDD00D8D05C /* LibrairieCell.swift */; };
 		C158B722208E6BDD00D8D05C /* LibrairieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C158B720208E6BDD00D8D05C /* LibrairieCell.xib */; };
 		C15C4E08208BD0D2005D1BEF /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15C4E07208BD0D2005D1BEF /* MyTabBar.swift */; };
@@ -107,6 +108,7 @@
 		C157DB53209DA6E00047F766 /* CommentsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsCell.xib; sourceTree = "<group>"; };
 		C157DB56209F3F9B0047F766 /* PostUnicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUnicController.swift; sourceTree = "<group>"; };
 		C157DB57209F3F9B0047F766 /* PostUnicController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostUnicController.xib; sourceTree = "<group>"; };
+		C157DB5A20A0E3880047F766 /* Notifs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifs.swift; sourceTree = "<group>"; };
 		C158B71F208E6BDD00D8D05C /* LibrairieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrairieCell.swift; sourceTree = "<group>"; };
 		C158B720208E6BDD00D8D05C /* LibrairieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibrairieCell.xib; sourceTree = "<group>"; };
 		C15C4E07208BD0D2005D1BEF /* MyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				C1657ADC208FBBE0006799D6 /* Post.swift */,
 				C1657ADE208FBC46006799D6 /* Comments.swift */,
 				C19EAC852099B9BD005B8917 /* Hashtag.swift */,
+				C157DB5A20A0E3880047F766 /* Notifs.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				C1244C012088F3D300F85C2C /* ViewController.swift in Sources */,
 				C19EAC862099B9BE005B8917 /* Hashtag.swift in Sources */,
 				C15C4E33208E3CF4005D1BEF /* ResizeController.swift in Sources */,
+				C157DB5B20A0E3890047F766 /* Notifs.swift in Sources */,
 				C1DCA4882089479200CCAAB9 /* Ref.swift in Sources */,
 				C1657ADD208FBBE0006799D6 /* Post.swift in Sources */,
 				C1DCA48120892A3D00CCAAB9 /* MydelButton.swift in Sources */,

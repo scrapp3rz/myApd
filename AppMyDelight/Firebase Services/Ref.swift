@@ -21,6 +21,12 @@ class Ref {
     var postRoot: DatabaseReference { return bdd.child("posts") }
     var myPostsBDD: DatabaseReference { return postRoot.child(ME.id) }
     var hashtagRoot: DatabaseReference { return bdd.child("hashtag") }
+    var notifsRoot: DatabaseReference { return bdd.child("notification") }
+    var myNotifs: DatabaseReference { return notifsRoot.child(ME.id) }
+    
+    func notifUser(id: String) -> DatabaseReference {
+        return notifsRoot.child(id)
+    }
 
 
     func specificUser(id: String) -> DatabaseReference {

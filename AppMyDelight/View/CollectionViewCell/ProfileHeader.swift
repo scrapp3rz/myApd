@@ -69,7 +69,13 @@ class ProfileHeader: UICollectionReusableView {
             if Button_Follow_Or_Change.titleLabel?.text == "Suivre" {
                 myFollowings.append(self.user.id)
                 hisFollowers.append(ME.id)
-                
+                let dict:  [String: AnyObject] =  [
+                    "date": Date().timeIntervalSince1970 as AnyObject,
+                    "text": " A commencé à vous suivre" as AnyObject,
+                    "user": ME.id as AnyObject,
+                    "view": false as AnyObject
+                ]
+                BDD().sendNotification(id: self.user.id, dict: dict)
             } else if Button_Follow_Or_Change.titleLabel?.text == "Ne plus suivre" {
                 if let indexFollowers = hisFollowers.index(of: ME.id) {
                     hisFollowers.remove(at: indexFollowers)

@@ -150,6 +150,13 @@ class BDD {
         }
     }
    
+    func sendNotification(id: String, dict: [String: AnyObject]) {
+        Ref().notifUser(id: id).childByAutoId().updateChildValues(dict)
+    }
+    
+    
+    
+    
     
 }
 

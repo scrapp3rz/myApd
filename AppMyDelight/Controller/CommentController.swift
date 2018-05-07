@@ -126,7 +126,7 @@ class CommentController: UIViewController, UITableViewDelegate, UITableViewDataS
     
 
     @IBAction func Send_Button_Action(_ sender: Any) {
-        let dict = [
+        var dict = [
             "date": Date().timeIntervalSince1970 as AnyObject,
             "text": TextView.text as AnyObject,
             "user": ME.id as AnyObject
@@ -135,6 +135,11 @@ class CommentController: UIViewController, UITableViewDelegate, UITableViewDataS
         TextView.text = ""
         hideMyKeyboard()
         BDD().sendComment(ref: post.ref, dict: dict as [String: AnyObject])
+        if self.post.user.id != ME.id {
+            dict["post"] = self.post.id as AnyObject
+            dict["view"] = false as AnyObject
+            BDD().sendNotification(id: self.post.user.id, dict: dict)
+        }
         
     }
     

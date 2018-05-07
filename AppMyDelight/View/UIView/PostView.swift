@@ -72,6 +72,16 @@ class PostView: UIView {
                 self.setup(post: post!, filController: self.filController, profileController: self.profileController, postUnicController: self.postUnicController)
             }
         }
+        if myLikes.contains(ME.id) && self.post.user.id != ME.id {
+            let dict: [String: AnyObject] = [
+                "text" : " A aimé votre post" as AnyObject,
+                "date" : Date().timeIntervalSince1970 as Double as AnyObject,
+                "user" : ME.id as AnyObject,
+                "post" : self.post.id as AnyObject,
+                "view" : false as AnyObject
+            ]
+            BDD().sendNotification(id: self.post.user.id, dict: dict)
+        }
     }
     
     
