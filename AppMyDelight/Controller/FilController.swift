@@ -13,6 +13,7 @@ class FilController: UICollectionViewController, UICollectionViewDelegateFlowLay
 
     var posts = [Post]()
     var hashtag: Hashtag?
+    var usersArray = [String]()
     
     
     override func viewDidLoad() {
@@ -28,6 +29,19 @@ class FilController: UICollectionViewController, UICollectionViewDelegateFlowLay
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        if hashtag == nil {
+            var array = ME.following
+            array.append(ME.id)
+            if array != usersArray {
+                posts = [Post]()
+                collectionView?.reloadData()
+                getAllThePosts()
+            }
+        }
+    }
+    
+    
     func sortAndReload() {
         self.posts = self.posts.sorted(by: {$0.date > $1.date})
         self.collectionView?.reloadData()
@@ -49,6 +63,7 @@ class FilController: UICollectionViewController, UICollectionViewDelegateFlowLay
     func getAllThePosts() {
         var usersToParse = ME.following
         usersToParse.append(ME.id)
+        usersArray = usersToParse
         for user in usersToParse {
             BDD().getPost(user: user, completion: { (post) -> (Void) in
                 if post != nil {
