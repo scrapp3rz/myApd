@@ -69,22 +69,27 @@ class ProfileHeader: UICollectionReusableView {
             if Button_Follow_Or_Change.titleLabel?.text == "Suivre" {
                 myFollowings.append(self.user.id)
                 hisFollowers.append(ME.id)
-                BDD().updateUser(dict: ["following": myFollowings as AnyObject], completion:  { (user) -> (Void) in
-                    if user  != nil {
-                        ME = user!
-                    }
-                })
-                Ref().specificUser(id: self.user.id).updateChildValues(["followers": hisFollowers as AnyObject])
-                BDD().getUser(id: self.user.id, completion:  { (util) -> (Void) in
-                    if util != nil {
-                        self.controller?.user = util!
-                        self.controller?.collectionView?.reloadData()
-                    }
-                })
                 
             } else if Button_Follow_Or_Change.titleLabel?.text == "Ne plus suivre" {
-                
+                if let indexFollowers = hisFollowers.index(of: ME.id) {
+                    hisFollowers.remove(at: indexFollowers)
+                }
+                if let indexFollowings = myFollowings.index(of: self.user.id) {
+                    myFollowings.remove(at: indexFollowings)
+                }
             }
+            BDD().updateUser(dict: ["following": myFollowings as AnyObject], completion:  { (user) -> (Void) in
+                if user  != nil {
+                    ME = user!
+                }
+            })
+            Ref().specificUser(id: self.user.id).updateChildValues(["followers": hisFollowers as AnyObject])
+            BDD().getUser(id: self.user.id, completion:  { (util) -> (Void) in
+                if util != nil {
+                    self.controller?.user = util!
+                    self.controller?.collectionView?.reloadData()
+                }
+            })
         }
         
     }
