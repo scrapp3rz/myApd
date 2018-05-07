@@ -35,18 +35,19 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let hashNib = UINib(nibName: HASHTAG_CELL, bundle: nil)
         TableView.register(hashNib, forCellReuseIdentifier: HASHTAG_CELL)
         TableView.tableFooterView = UIView()
+        
+    }
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getHashtagFromBDD()
         getUserFromBDD()
     }
-
-    func getUserFromBDD() {
-        BDD().getAllUsers { (util) -> (Void) in
-            if let user = util {
-                self.users.append(user)
-                self.TableView.reloadData()
-            }
-        }
-    }
+    
+    
+    
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,6 +84,19 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
             cell.setup(hashtag: hashtags[indexPath.row])
             }
             return cell
+        }
+    }
+    
+    func getUserFromBDD() {
+        BDD().getAllUsers { (util) -> (Void) in
+            if let user = util {
+                if let index = self.users.index(where: {$0.id == user.id}) {
+                    self.users[index] = user
+                } else {
+                    self.users.append(user)
+                }
+                self.TableView.reloadData()
+            }
         }
     }
 
