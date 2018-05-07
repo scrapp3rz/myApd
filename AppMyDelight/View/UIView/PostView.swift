@@ -24,6 +24,15 @@ class PostView: UIView {
     @IBOutlet weak var TextView: TextViewWithHashtag!
     
     
+    var view: UIView!
+    var post: Post!
+    var filController: FilController?
+    var profileController: ProfileController?
+    var postUnicController: PostUnicController?
+    var imageViewHeart: UIImageView?
+    
+    
+    
     @IBAction func Button_Like_Action(_ sender: Any) {
         var mylikes = self.post.likes
         if Button_Like.imageView?.image == #imageLiteral(resourceName: "coeur_vide") {
@@ -45,6 +54,8 @@ class PostView: UIView {
             filController?.navigationController?.pushViewController(controller, animated: true)
             } else if profileController != nil {
             profileController?.navigationController?.pushViewController(controller, animated: true)
+            } else if postUnicController != nil {
+            postUnicController?.navigationController?.pushViewController(controller, animated: true)
         }
         
     }
@@ -52,18 +63,13 @@ class PostView: UIView {
     
     
     
-    var view: UIView!
-    var post: Post!
-    var filController: FilController?
-    var profileController: ProfileController?
-    var imageViewHeart: UIImageView?
-    
+
     
     func addLikeAndNotif(myLikes: [String]) {
         BDD().updatePost(postId: self.post.id, userId: self.post.user.id, dict: ["likes": myLikes as AnyObject])
         BDD().getPostsFromHashtag(dict: [self.post.id: self.post.user.id]) { (post) -> (Void) in
             if post != nil {
-                self.setup(post: post!, filController: self.filController, profileController: self.profileController)
+                self.setup(post: post!, filController: self.filController, profileController: self.profileController, postUnicController: self.postUnicController)
             }
         }
     }
@@ -79,10 +85,11 @@ class PostView: UIView {
         view = runXib()
     }
     
-    func setup(post: Post, filController: FilController?, profileController: ProfileController?) {
+    func setup(post: Post, filController: FilController?, profileController: ProfileController?, postUnicController: PostUnicController?) {
         self.post = post
         self.filController = filController
         self.profileController = profileController
+        self.postUnicController = postUnicController
         
         // dl des images :
         Profile_Image.download(imageUrl: self.post.user.imageUrl)
@@ -134,6 +141,8 @@ class PostView: UIView {
             filController?.navigationController?.pushViewController(controller, animated: true)
         } else if profileController != nil {
             profileController?.navigationController?.pushViewController(controller, animated: true)
+        } else if postUnicController != nil {
+            postUnicController?.navigationController?.pushViewController(controller, animated: true)
         }
     }
     

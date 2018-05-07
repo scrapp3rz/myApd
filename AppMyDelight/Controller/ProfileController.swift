@@ -116,6 +116,18 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
         
         return header
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if !postComplet {
+            let controller = PostUnicController()
+            controller.post = posts[indexPath.row]
+            navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
+    
+    
+    
 }
 
 

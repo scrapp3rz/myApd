@@ -46,6 +46,7 @@ class CommentController: UIViewController, UITableViewDelegate, UITableViewDataS
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardIn), name: Notification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardOut), name: Notification.Name.UIKeyboardWillHide, object: nil)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideMyKeyboard)))
+        observeCom()
 
         // Do any additional setup after loading the view.
     }
@@ -73,7 +74,30 @@ class CommentController: UIViewController, UITableViewDelegate, UITableViewDataS
         })
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let comment = comments[indexPath.row]
+        let text = comment.text + "\n" + comment.date.xTimeAgo()
+        let hauteur = text.rect(largeur: tableView.frame.width - 16, font: UIFont.systemFont(ofSize: 16)).height
+        return hauteur + 80
+        
+    }
     
+    
+    func observeCom() {
+        BDD().getComment(ref: post.ref) { (commentaire) -> (Void) in
+            if commentaire != nil {
+                if let listeIndex = self.comments.index(where: {$0.id == commentaire.id}) {
+                    self.comments[listeIndex] = commentaire
+            } else {
+                    self.comments.append(commentaire)
+            }
+            self.TableView.reloadData()
+            }
+        }
+    }
+    
+    
+
     func animate(constante: CGFloat) {
         UIView.animate(withDuration: 0.35) {
             self.Bottom_Constraint.constant = constante

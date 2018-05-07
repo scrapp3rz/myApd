@@ -24,6 +24,8 @@
 		C157DB51209C529D0047F766 /* TextViewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB50209C529D0047F766 /* TextViewComment.swift */; };
 		C157DB54209DA6E00047F766 /* CommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB52209DA6E00047F766 /* CommentsCell.swift */; };
 		C157DB55209DA6E00047F766 /* CommentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C157DB53209DA6E00047F766 /* CommentsCell.xib */; };
+		C157DB58209F3F9B0047F766 /* PostUnicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB56209F3F9B0047F766 /* PostUnicController.swift */; };
+		C157DB59209F3F9B0047F766 /* PostUnicController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C157DB57209F3F9B0047F766 /* PostUnicController.xib */; };
 		C158B721208E6BDD00D8D05C /* LibrairieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C158B71F208E6BDD00D8D05C /* LibrairieCell.swift */; };
 		C158B722208E6BDD00D8D05C /* LibrairieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C158B720208E6BDD00D8D05C /* LibrairieCell.xib */; };
 		C15C4E08208BD0D2005D1BEF /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15C4E07208BD0D2005D1BEF /* MyTabBar.swift */; };
@@ -103,6 +105,8 @@
 		C157DB50209C529D0047F766 /* TextViewComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewComment.swift; sourceTree = "<group>"; };
 		C157DB52209DA6E00047F766 /* CommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCell.swift; sourceTree = "<group>"; };
 		C157DB53209DA6E00047F766 /* CommentsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsCell.xib; sourceTree = "<group>"; };
+		C157DB56209F3F9B0047F766 /* PostUnicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUnicController.swift; sourceTree = "<group>"; };
+		C157DB57209F3F9B0047F766 /* PostUnicController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostUnicController.xib; sourceTree = "<group>"; };
 		C158B71F208E6BDD00D8D05C /* LibrairieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrairieCell.swift; sourceTree = "<group>"; };
 		C158B720208E6BDD00D8D05C /* LibrairieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibrairieCell.xib; sourceTree = "<group>"; };
 		C15C4E07208BD0D2005D1BEF /* MyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
@@ -308,6 +312,8 @@
 				C119FFDF2098656A005F9A9F /* ModificationController.xib */,
 				C157DB4C209B92C00047F766 /* CommentController.swift */,
 				C157DB4D209B92C00047F766 /* CommentController.xib */,
+				C157DB56209F3F9B0047F766 /* PostUnicController.swift */,
+				C157DB57209F3F9B0047F766 /* PostUnicController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -442,6 +448,7 @@
 				C15C4E21208D0FF4005D1BEF /* CameraCell.xib in Resources */,
 				C119FFDD20977C6A005F9A9F /* ProfileHeader.xib in Resources */,
 				C158B722208E6BDD00D8D05C /* LibrairieCell.xib in Resources */,
+				C157DB59209F3F9B0047F766 /* PostUnicController.xib in Resources */,
 				C19EAC8F2099C60D005B8917 /* HashtagCell.xib in Resources */,
 				C1244C0C2088F3D400F85C2C /* LaunchScreen.storyboard in Resources */,
 				C19EAC8B2099C5F9005B8917 /* UserCell.xib in Resources */,
@@ -571,6 +578,7 @@
 				C1DCA47F2089260300CCAAB9 /* UIExtensions.swift in Sources */,
 				C1657ADF208FBC46006799D6 /* Comments.swift in Sources */,
 				C1DCA494208B24EE00CCAAB9 /* Ingredient.swift in Sources */,
+				C157DB58209F3F9B0047F766 /* PostUnicController.swift in Sources */,
 				C1657AD2208F29DA006799D6 /* ResizerController.swift in Sources */,
 				C1DCA48A208948B100CCAAB9 /* BDD.swift in Sources */,
 				C119FFDC20977C6A005F9A9F /* ProfileHeader.swift in Sources */,

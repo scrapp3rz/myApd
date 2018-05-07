@@ -43,13 +43,14 @@ class Post {
         self._text = dict["text"] as? String ?? ""
         self._date = dict["date"] as? Double ?? 0
         self._likes = dict["likes"] as? NSArray as? [String] ?? []
+        comms()
     }
     
     
     func comms() {
         BDD().getComment(ref: self._ref) { (comments) -> (Void) in
             if comments != nil {
-                self._comments.append(comments!)
+                self._comments.append(comments)
             }
         }
     }

@@ -15,9 +15,7 @@ class CommentsCell: UITableViewCell {
 
     
     @IBOutlet weak var Profile_Image: roundedImage!
-    
     @IBOutlet weak var Name_Label: UILabel!
-    
     @IBOutlet weak var Comments_Label: UILabel!
     
     var comments: Comments!
@@ -38,6 +36,10 @@ class CommentsCell: UITableViewCell {
     
     func setup(comments: Comments) {
         self.comments = comments
+        Profile_Image.download(imageUrl: self.comments.user.imageUrl)
+        let string2 = "\n" + self.comments.user.forname + " " + self.comments.user.lastname
+        Name_Label.attributedText(string1: self.comments.user.username, string2: string2)
+        Comments_Label.attributedText(string1: self.comments.text, string2: "\n" + self.comments.date.xTimeAgo())
         
     }
 }
