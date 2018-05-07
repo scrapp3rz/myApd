@@ -30,6 +30,7 @@ class MyTabBar: UITabBarController {
         
         add(controller: fil, image: #imageLiteral(resourceName: "tab_accueil"), title: "accueil"),
         add(controller: SearchController(), image: #imageLiteral(resourceName: "Search"), title: "Rechercher"),
+   //     add(controller: VideoController(), image: #imageLiteral(resourceName: "Vidéos"), title: "Vidéos"),
         add(controller: PhotoController(), image: #imageLiteral(resourceName: "tab_photo"), title: ""),
         add(controller: notif, image: #imageLiteral(resourceName: "tab_notif"), title: "Notifications"),
         add(controller: profile, image: #imageLiteral(resourceName: "profil"), title: "profil")
