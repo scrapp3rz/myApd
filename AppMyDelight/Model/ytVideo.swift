@@ -1,5 +1,5 @@
 //
-//  ytVideo.swift
+//  YtVideo.swift
 //  AppMyDelight
 //
 //  Created by vincent portier on 08/05/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ytVideo {
+class YtVideo {
     
     private var _shortPitch: String
     private var _recipeName: String
