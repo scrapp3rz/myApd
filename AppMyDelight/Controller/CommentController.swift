@@ -86,10 +86,10 @@ class CommentController: UIViewController, UITableViewDelegate, UITableViewDataS
     func observeCom() {
         BDD().getComment(ref: post.ref) { (commentaire) -> (Void) in
             if commentaire != nil {
-                if let listeIndex = self.comments.index(where: {$0.id == commentaire.id}) {
-                    self.comments[listeIndex] = commentaire
+                if let listeIndex = self.comments.index(where: {$0.id == commentaire?.id}) {
+                    self.comments[listeIndex] = commentaire!
             } else {
-                    self.comments.append(commentaire)
+                    self.comments.append(commentaire!)
             }
             self.TableView.reloadData()
             }

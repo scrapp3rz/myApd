@@ -112,6 +112,7 @@ class PostView: UIView {
         //ajout likes et comments
         Number_Of_Likes.text = String(self.post.likes.count)
         Number_Of_Comments.text = String(self.post.comments.count)
+        observeNewComments()
         
         // ajout du Like
         if self.post.likes.contains(ME.id) {
@@ -135,10 +136,27 @@ class PostView: UIView {
         Profile_Image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sendToProfile)))
         Username_Label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sendToProfile)))
         
-        
-        
-        
     }
+    
+    
+    func observeNewComments() {
+        var comms = [Comments]()
+        BDD().getComment(ref: self.post.ref) { (comments) -> (Void) in
+            if let comm = comments {
+                if let index = comms.index(where: {$0.id == comm.id}) {
+                    comms[index] = comm
+                } else {
+                    comms.append(comm)
+                }
+                self.Number_Of_Comments.text = String(self.post.comments.count)
+            }
+        }
+    }
+
+        
+
+    
+
     
     @objc func sendToProfile() {
         

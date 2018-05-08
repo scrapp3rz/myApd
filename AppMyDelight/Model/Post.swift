@@ -50,7 +50,7 @@ class Post {
     func comms() {
         BDD().getComment(ref: self._ref) { (comments) -> (Void) in
             if comments != nil {
-                self._comments.append(comments)
+                self._comments.append(comments!)
             }
         }
     }
