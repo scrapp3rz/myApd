@@ -37,7 +37,25 @@ class MyTabBar: UITabBarController {
         
     ]
     
+        observeNotifs()
+        
   }
+    
+    func observeNotifs() {
+        NOTIFS = [Notifs]()
+        BDD().getNotifs { (notifs) -> (Void) in
+            if notifs != nil {
+                if let index = NOTIFS.index(where: {$0.id == notifs!.id}) {
+                    NOTIFS[index] = notifs!
+                } else {
+                    NOTIFS.append(notifs!)
+                }
+                NotificationCenter.default.post(name: Notification.Name("Notifs"), object: nil)
+            }
+        }
+        
+    }
+    
     
     func add(controller: UIViewController, image: UIImage, title: String) -> UINavigationController {
         let nav = MyNav(rootViewController: controller)

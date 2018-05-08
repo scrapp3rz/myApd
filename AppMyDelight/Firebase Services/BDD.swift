@@ -161,7 +161,7 @@ class BDD {
                 self.getUser(id: userId, completion: { (util) -> (Void) in
                     if util != nil, let date = dict["date"] as? Double, let text = dict["text"] as? String, let view = dict["view"] as? Bool{
                         if let postId = dict["post"] as? String {
-                            self.getPostsFromHashtag(dict: [postId: userId], completion: { (post) -> (Void) in
+                            self.getPostsFromHashtag(dict: [postId: ME.id], completion: { (post) -> (Void) in
                                 if post != nil {
                                     let notifs = Notifs(ref: snapshot.ref, id: snapshot.key, user: util!, post: post!, date: date, text: text, view: view)
                                     completion?(notifs)

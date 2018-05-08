@@ -10,3 +10,5 @@ import UIKit
 
 
 var ME: User!
+var NOTIFS: [Notifs]!
+
