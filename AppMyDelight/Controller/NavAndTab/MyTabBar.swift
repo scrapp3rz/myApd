@@ -51,10 +51,26 @@ class MyTabBar: UITabBarController {
                     NOTIFS.append(notifs!)
                 }
                 NotificationCenter.default.post(name: Notification.Name("Notifs"), object: nil)
+                self.addBadgeNotif()
             }
         }
-        
     }
+    
+    func addBadgeNotif() {
+        guard let items = self.tabBar.items, items.count == 5 else { return }
+        var notYetWatched = [Notifs]()
+        for n in NOTIFS {
+            if !n.view {
+                notYetWatched.append(n)
+            }
+        }
+        if notYetWatched.count > 0 {
+            items[3].badgeValue = String(notYetWatched.count)
+        } else {
+            items[3].badgeValue = nil
+        }
+    }
+    
     
     
     func add(controller: UIViewController, image: UIImage, title: String) -> UINavigationController {
@@ -63,8 +79,9 @@ class MyTabBar: UITabBarController {
         nav.tabBarItem.title = title
         return nav
         
-        
-        
     }
 
+    
+    
+    
 }
