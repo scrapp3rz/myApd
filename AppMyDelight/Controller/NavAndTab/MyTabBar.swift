@@ -13,6 +13,8 @@ class MyTabBar: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(notifsViewed), name: Notification.Name("View"), object: nil)
+        
         tabBar.backgroundColor = .white
         tabBar.tintColor = .black
         
@@ -41,6 +43,12 @@ class MyTabBar: UITabBarController {
         
   }
     
+    
+    @objc func notifsViewed(notification: Notification) {
+        observeNotifs()
+    }
+    
+    
     func observeNotifs() {
         NOTIFS = [Notifs]()
         BDD().getNotifs { (notifs) -> (Void) in
@@ -50,6 +58,7 @@ class MyTabBar: UITabBarController {
                 } else {
                     NOTIFS.append(notifs!)
                 }
+                NOTIFS = NOTIFS.sorted(by: {$0.date > $1.date})
                 NotificationCenter.default.post(name: Notification.Name("Notifs"), object: nil)
                 self.addBadgeNotif()
             }

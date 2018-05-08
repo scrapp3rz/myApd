@@ -46,6 +46,7 @@
                             <constraint firstAttribute="height" constant="40" id="TJb-y3-2e9"/>
                             <constraint firstAttribute="width" constant="80" id="qpS-Xj-47s"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <state key="normal" title="Button"/>
                     </button>
                 </subviews>

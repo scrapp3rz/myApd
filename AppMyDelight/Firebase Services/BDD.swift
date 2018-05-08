@@ -150,6 +150,41 @@ class BDD {
         }
     }
    
+    
+    func addLike(user: User, follow: Bool, completion: UserCompletion?) {
+        var myFollowings = ME.following
+        var hisFollowers = user.followers
+        if follow {
+            myFollowings.append(user.id)
+            hisFollowers.append(ME.id)
+            let dict:  [String: AnyObject] =  [
+                "date": Date().timeIntervalSince1970 as AnyObject,
+                "text": " A commencé à vous suivre" as AnyObject,
+                "user": ME.id as AnyObject,
+                "view": false as AnyObject
+            ]
+            sendNotification(id: user.id, dict: dict)
+        } else {
+            if let indexFollowers = hisFollowers.index(of: ME.id) {
+                hisFollowers.remove(at: indexFollowers)
+            }
+            if let indexFollowings = myFollowings.index(of: user.id) {
+                myFollowings.remove(at: indexFollowings)
+            }
+        }
+        updateUser(dict: ["following": myFollowings as AnyObject], completion:  { (user) -> (Void) in
+            if user  != nil {
+                ME = user!
+            }
+        })
+        Ref().specificUser(id: user.id).updateChildValues(["followers": hisFollowers as AnyObject])
+        BDD().getUser(id: user.id, completion:  { (util) -> (Void) in
+                completion?(util!)
+        })
+    }
+    
+    
+    
     func sendNotification(id: String, dict: [String: AnyObject]) {
         Ref().notifUser(id: id).childByAutoId().updateChildValues(dict)
     }

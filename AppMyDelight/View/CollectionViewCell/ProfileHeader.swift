@@ -64,35 +64,15 @@ class ProfileHeader: UICollectionReusableView {
             let newController = ModificationController()
             controller?.navigationController?.pushViewController(newController, animated: true)
         } else {
-            var myFollowings = ME.following
-            var hisFollowers = self.user.followers
+            var follow: Bool!
             if Button_Follow_Or_Change.titleLabel?.text == "Suivre" {
-                myFollowings.append(self.user.id)
-                hisFollowers.append(ME.id)
-                let dict:  [String: AnyObject] =  [
-                    "date": Date().timeIntervalSince1970 as AnyObject,
-                    "text": " A commencé à vous suivre" as AnyObject,
-                    "user": ME.id as AnyObject,
-                    "view": false as AnyObject
-                ]
-                BDD().sendNotification(id: self.user.id, dict: dict)
+                follow = true
             } else if Button_Follow_Or_Change.titleLabel?.text == "Ne plus suivre" {
-                if let indexFollowers = hisFollowers.index(of: ME.id) {
-                    hisFollowers.remove(at: indexFollowers)
-                }
-                if let indexFollowings = myFollowings.index(of: self.user.id) {
-                    myFollowings.remove(at: indexFollowings)
-                }
+                follow = false
             }
-            BDD().updateUser(dict: ["following": myFollowings as AnyObject], completion:  { (user) -> (Void) in
-                if user  != nil {
-                    ME = user!
-                }
-            })
-            Ref().specificUser(id: self.user.id).updateChildValues(["followers": hisFollowers as AnyObject])
-            BDD().getUser(id: self.user.id, completion:  { (util) -> (Void) in
-                if util != nil {
-                    self.controller?.user = util!
+            BDD().addLike(user: self.user, follow: follow, completion:  { (user) -> (Void) in
+                if user != nil {
+                    self.controller?.user = user!
                     self.controller?.collectionView?.reloadData()
                 }
             })

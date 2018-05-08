@@ -18,6 +18,7 @@ class NotifsCell: UITableViewCell {
     @IBOutlet weak var Follow_Button: MydelButton!
     
     var notifs: Notifs!
+    var controller: NotifController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,9 +31,12 @@ class NotifsCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(notifs: Notifs) {
+    func setup(notifs: Notifs, controller: NotifController) {
         self.notifs = notifs
+        self.controller = controller
         Profile_Image.download(imageUrl: self.notifs.user.imageUrl)
+        Profile_Image.isUserInteractionEnabled = true
+        Profile_Image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToProfile)))
         if self.notifs.post == nil {
             Posted_Image.isHidden = true
             Follow_Button.isHidden = false
@@ -45,15 +49,35 @@ class NotifsCell: UITableViewCell {
             Posted_Image.isHidden = false
             Follow_Button.isHidden = true
             Posted_Image.download(imageUrl: self.notifs.post!.imageUrl)
-            
+            Posted_Image.isUserInteractionEnabled = true
+            Posted_Image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToPost)))
         }
-        var string2 = "\n"
+        var string2 = "\n" + self.notifs.date.xTimeAgo() + "\n"
         switch self.notifs.text {
             case " a aimé votre post": string2 += self.notifs.text
             case " a commencé à vous suivre": string2 += self.notifs.text
-            default: string2 += " a commenté : " + self.notifs.text
+            default: string2 += /* " a commenté : "  + */ self.notifs.text
         }
         Notif_Description.attributedText(string1: self.notifs.user.username, string2: string2)
+    }
+    
+    @objc func goToPost() {
+        let postController = PostUnicController()
+        if let post = self.notifs.post {
+            postController.post = self.notifs.post
+            controller?.navigationController?.pushViewController(postController, animated: true)
+
+        }
+    }
+    
+    @objc func goToProfile() {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        let profileController = ProfileController(collectionViewLayout: layout)
+        profileController.user = self.notifs.user
+        controller?.navigationController?.pushViewController(profileController, animated: true)
+        
     }
     
     
