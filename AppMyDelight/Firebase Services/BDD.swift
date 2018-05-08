@@ -140,12 +140,12 @@ class BDD {
                             let newComment = Comments(ref: snapshot.ref, id: snapshot.key, user: user!, dict: dict)
                             completion?(newComment)
                         } else {
-                            completion?((String() as AnyObject) as! Comments)
+                            completion?(nil)
                         }
                     })
                 }
             } else {
-                completion?((String() as AnyObject) as! Comments)
+                completion?(nil)
             }
         }
     }

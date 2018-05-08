@@ -29,6 +29,7 @@
 		C157DB5B20A0E3890047F766 /* Notifs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB5A20A0E3880047F766 /* Notifs.swift */; };
 		C157DB5E20A18D1B0047F766 /* NotifsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB5C20A18D1B0047F766 /* NotifsCell.swift */; };
 		C157DB5F20A18D1B0047F766 /* NotifsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C157DB5D20A18D1B0047F766 /* NotifsCell.xib */; };
+		C157DB6120A21F7E0047F766 /* ytVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB6020A21F7E0047F766 /* ytVideo.swift */; };
 		C158B721208E6BDD00D8D05C /* LibrairieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C158B71F208E6BDD00D8D05C /* LibrairieCell.swift */; };
 		C158B722208E6BDD00D8D05C /* LibrairieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C158B720208E6BDD00D8D05C /* LibrairieCell.xib */; };
 		C15C4E08208BD0D2005D1BEF /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15C4E07208BD0D2005D1BEF /* MyTabBar.swift */; };
@@ -113,6 +114,7 @@
 		C157DB5A20A0E3880047F766 /* Notifs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifs.swift; sourceTree = "<group>"; };
 		C157DB5C20A18D1B0047F766 /* NotifsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifsCell.swift; sourceTree = "<group>"; };
 		C157DB5D20A18D1B0047F766 /* NotifsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifsCell.xib; sourceTree = "<group>"; };
+		C157DB6020A21F7E0047F766 /* ytVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ytVideo.swift; sourceTree = "<group>"; };
 		C158B71F208E6BDD00D8D05C /* LibrairieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrairieCell.swift; sourceTree = "<group>"; };
 		C158B720208E6BDD00D8D05C /* LibrairieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibrairieCell.xib; sourceTree = "<group>"; };
 		C15C4E07208BD0D2005D1BEF /* MyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				C1657ADE208FBC46006799D6 /* Comments.swift */,
 				C19EAC852099B9BD005B8917 /* Hashtag.swift */,
 				C157DB5A20A0E3880047F766 /* Notifs.swift */,
+				C157DB6020A21F7E0047F766 /* ytVideo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				C1DCA4882089479200CCAAB9 /* Ref.swift in Sources */,
 				C1657ADD208FBBE0006799D6 /* Post.swift in Sources */,
 				C1DCA48120892A3D00CCAAB9 /* MydelButton.swift in Sources */,
+				C157DB6120A21F7E0047F766 /* ytVideo.swift in Sources */,
 				C1DCA47B2089255B00CCAAB9 /* ConnexionView.swift in Sources */,
 				C19EAC8E2099C60D005B8917 /* HashtagCell.swift in Sources */,
 				C1657ACE208F1610006799D6 /* SquareImageCell.swift in Sources */,
