@@ -41,23 +41,26 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ttx-qG-JF7" customClass="MydelButton" customModule="AppMyDelight" customModuleProvider="target">
-                        <rect key="frame" x="301" y="59" width="80" height="40"/>
+                        <rect key="frame" x="296" y="59" width="90" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="TJb-y3-2e9"/>
-                            <constraint firstAttribute="width" constant="80" id="qpS-Xj-47s"/>
+                            <constraint firstAttribute="width" constant="90" id="qpS-Xj-47s"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="Follow_Button_Action:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5EC-jw-bH1"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Ttx-qG-JF7" firstAttribute="leading" secondItem="wCP-4I-gzD" secondAttribute="trailing" constant="8" id="L39-rl-OLd"/>
+                    <constraint firstItem="Ttx-qG-JF7" firstAttribute="leading" secondItem="wCP-4I-gzD" secondAttribute="trailing" constant="3" id="L39-rl-OLd"/>
                     <constraint firstAttribute="bottomMargin" secondItem="wCP-4I-gzD" secondAttribute="bottom" constant="10" id="L8L-mp-1lK"/>
                     <constraint firstItem="oEh-AC-Vrt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="VVz-Im-CoN"/>
                     <constraint firstItem="nnC-PE-pCc" firstAttribute="leading" secondItem="wCP-4I-gzD" secondAttribute="trailing" constant="8" id="Xw0-0K-aZN"/>
                     <constraint firstItem="Ttx-qG-JF7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Zbg-X8-xfO"/>
                     <constraint firstItem="wCP-4I-gzD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="cjL-fE-WdR"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Ttx-qG-JF7" secondAttribute="trailing" constant="10" id="rDP-EW-29z"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Ttx-qG-JF7" secondAttribute="trailing" constant="5" id="rDP-EW-29z"/>
                     <constraint firstItem="oEh-AC-Vrt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="uEM-kt-jNd"/>
                     <constraint firstItem="nnC-PE-pCc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wAI-SZ-WSW"/>
                     <constraint firstItem="wCP-4I-gzD" firstAttribute="leading" secondItem="oEh-AC-Vrt" secondAttribute="trailing" constant="8" id="wck-YR-z9h"/>
@@ -71,7 +74,7 @@
                 <outlet property="Posted_Image" destination="nnC-PE-pCc" id="XGL-0k-5Ta"/>
                 <outlet property="Profile_Image" destination="oEh-AC-Vrt" id="mLA-cH-xHU"/>
             </connections>
-            <point key="canvasLocation" x="70.5" y="109"/>
+            <point key="canvasLocation" x="157" y="77"/>
         </tableViewCell>
     </objects>
 </document>

@@ -80,5 +80,44 @@ class NotifsCell: UITableViewCell {
         
     }
     
+    @IBAction func Follow_Button_Action(_ sender: Any) {
+        var follow: Bool!
+        if Follow_Button.titleLabel?.text == "suivre" {
+            follow = true
+        } else {
+            follow = false
+        }
+        BDD().addLike(user: self.notifs.user, follow: follow) { (user) -> (Void) in
+            if user != nil {
+                self.notifs.modifUser(user: user!)
+                self.setup(notifs: self.notifs, controller: self.controller!)
+            }
+        }
+    }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
