@@ -154,7 +154,29 @@ class BDD {
         Ref().notifUser(id: id).childByAutoId().updateChildValues(dict)
     }
     
-    
+    func getNotifs(completion: NotifsCompletion?) {
+        Ref().myNotifs.observe(.childAdded) { (snapshot) in
+            if let dict = snapshot.value as? [String: AnyObject] {
+            if let userId = dict["user"] as? String {
+                self.getUser(id: userId, completion: { (util) -> (Void) in
+                    if util != nil, let date = dict["date"] as? Double, let text = dict["text"] as? String, let view = dict["view"] as? Bool{
+                        if let postId = dict["post"] as? String {
+                            self.getPostsFromHashtag(dict: [postId: userId], completion: { (post) -> (Void) in
+                                if post != nil {
+                                    let notifs = Notifs(ref: snapshot.ref, id: snapshot.key, user: util!, post: post!, date: date, text: text, view: view)
+                                    completion?(notifs)
+                                }
+                            })
+                        } else {
+                            let notifWithoutPost = Notifs(ref: snapshot.ref, id: snapshot.key, user: util!, post: nil, date: date, text: text, view: view)
+                            completion?(notifWithoutPost)
+                        }
+                    }
+                })
+            }
+        }
+        }
+    }
     
     
     
