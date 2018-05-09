@@ -32,6 +32,10 @@ class YtVideo {
     var miniatureUrl: String {
         return _baseUrlMiniature + _code + _finUrlMiniature
     }
+    var code: String {
+        return _code
+    }
+    
     
     init(shortPitch: String, recipeName: String, code: String) {
         self._shortPitch = shortPitch

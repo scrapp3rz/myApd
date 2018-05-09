@@ -26,15 +26,17 @@ class MyTabBar: UITabBarController {
         let fil = FilController(collectionViewLayout: layout)
         let notif = NotifController(style: .plain)
         let profile = ProfileController(collectionViewLayout: layout)
+   //     let video = YouTubeVideoController(style: .plain)
         
         
     viewControllers = [
         
         add(controller: fil, image: #imageLiteral(resourceName: "tab_accueil"), title: "accueil"),
         add(controller: SearchController(), image: #imageLiteral(resourceName: "Search"), title: "Rechercher"),
+    //    add(controller: TableauVideoController(), image: #imageLiteral(resourceName: "play-button"), title: "Vidéos"),
         add(controller: ytVideoController(), image: #imageLiteral(resourceName: "play-button"), title: "Vidéos"),
-        add(controller: PhotoController(), image: #imageLiteral(resourceName: "tab_photo"), title: ""),
         add(controller: notif, image: #imageLiteral(resourceName: "tab_notif"), title: "Notifications"),
+        add(controller: PhotoController(), image: #imageLiteral(resourceName: "tab_photo"), title: ""),
         add(controller: profile, image: #imageLiteral(resourceName: "profil"), title: "profil")
         
     ]

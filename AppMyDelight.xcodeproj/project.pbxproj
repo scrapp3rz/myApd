@@ -32,6 +32,11 @@
 		C157DB6120A21F7E0047F766 /* YtVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB6020A21F7E0047F766 /* YtVideo.swift */; };
 		C157DB6420A222BF0047F766 /* ytVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB6220A222BE0047F766 /* ytVideoController.swift */; };
 		C157DB6520A222BF0047F766 /* ytVideoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C157DB6320A222BF0047F766 /* ytVideoController.xib */; };
+		C157DB6B20A318D10047F766 /* YouTubeVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB6A20A318D10047F766 /* YouTubeVideoController.swift */; };
+		C157DB6E20A31BE50047F766 /* YoutubeVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB6C20A31BE50047F766 /* YoutubeVideoCell.swift */; };
+		C157DB6F20A31BE50047F766 /* YoutubeVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C157DB6D20A31BE50047F766 /* YoutubeVideoCell.xib */; };
+		C157DB7220A32F230047F766 /* TableauVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB7020A32F230047F766 /* TableauVideoController.swift */; };
+		C157DB7320A32F230047F766 /* TableauVideoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C157DB7120A32F230047F766 /* TableauVideoController.xib */; };
 		C158B721208E6BDD00D8D05C /* LibrairieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C158B71F208E6BDD00D8D05C /* LibrairieCell.swift */; };
 		C158B722208E6BDD00D8D05C /* LibrairieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C158B720208E6BDD00D8D05C /* LibrairieCell.xib */; };
 		C15C4E08208BD0D2005D1BEF /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15C4E07208BD0D2005D1BEF /* MyTabBar.swift */; };
@@ -119,6 +124,11 @@
 		C157DB6020A21F7E0047F766 /* YtVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YtVideo.swift; sourceTree = "<group>"; };
 		C157DB6220A222BE0047F766 /* ytVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ytVideoController.swift; sourceTree = "<group>"; };
 		C157DB6320A222BF0047F766 /* ytVideoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ytVideoController.xib; sourceTree = "<group>"; };
+		C157DB6A20A318D10047F766 /* YouTubeVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeVideoController.swift; sourceTree = "<group>"; };
+		C157DB6C20A31BE50047F766 /* YoutubeVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideoCell.swift; sourceTree = "<group>"; };
+		C157DB6D20A31BE50047F766 /* YoutubeVideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YoutubeVideoCell.xib; sourceTree = "<group>"; };
+		C157DB7020A32F230047F766 /* TableauVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableauVideoController.swift; sourceTree = "<group>"; };
+		C157DB7120A32F230047F766 /* TableauVideoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableauVideoController.xib; sourceTree = "<group>"; };
 		C158B71F208E6BDD00D8D05C /* LibrairieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrairieCell.swift; sourceTree = "<group>"; };
 		C158B720208E6BDD00D8D05C /* LibrairieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibrairieCell.xib; sourceTree = "<group>"; };
 		C15C4E07208BD0D2005D1BEF /* MyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
@@ -298,6 +308,8 @@
 				C157DB53209DA6E00047F766 /* CommentsCell.xib */,
 				C157DB5C20A18D1B0047F766 /* NotifsCell.swift */,
 				C157DB5D20A18D1B0047F766 /* NotifsCell.xib */,
+				C157DB6C20A31BE50047F766 /* YoutubeVideoCell.swift */,
+				C157DB6D20A31BE50047F766 /* YoutubeVideoCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -330,6 +342,9 @@
 				C157DB57209F3F9B0047F766 /* PostUnicController.xib */,
 				C157DB6220A222BE0047F766 /* ytVideoController.swift */,
 				C157DB6320A222BF0047F766 /* ytVideoController.xib */,
+				C157DB6A20A318D10047F766 /* YouTubeVideoController.swift */,
+				C157DB7020A32F230047F766 /* TableauVideoController.swift */,
+				C157DB7120A32F230047F766 /* TableauVideoController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -465,6 +480,7 @@
 				C1657AD3208F29DA006799D6 /* ResizerController.xib in Resources */,
 				C15C4E21208D0FF4005D1BEF /* CameraCell.xib in Resources */,
 				C157DB5F20A18D1B0047F766 /* NotifsCell.xib in Resources */,
+				C157DB6F20A31BE50047F766 /* YoutubeVideoCell.xib in Resources */,
 				C119FFDD20977C6A005F9A9F /* ProfileHeader.xib in Resources */,
 				C158B722208E6BDD00D8D05C /* LibrairieCell.xib in Resources */,
 				C157DB59209F3F9B0047F766 /* PostUnicController.xib in Resources */,
@@ -486,6 +502,7 @@
 				C157DB6520A222BF0047F766 /* ytVideoController.xib in Resources */,
 				C157DB4F209B92C00047F766 /* CommentController.xib in Resources */,
 				C1657AE5208FC0D5006799D6 /* PostView.xib in Resources */,
+				C157DB7320A32F230047F766 /* TableauVideoController.xib in Resources */,
 				C15C4E1C208BD431005D1BEF /* SearchController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,6 +625,7 @@
 				C1244C012088F3D300F85C2C /* ViewController.swift in Sources */,
 				C19EAC862099B9BE005B8917 /* Hashtag.swift in Sources */,
 				C15C4E33208E3CF4005D1BEF /* ResizeController.swift in Sources */,
+				C157DB6E20A31BE50047F766 /* YoutubeVideoCell.swift in Sources */,
 				C157DB5B20A0E3890047F766 /* Notifs.swift in Sources */,
 				C157DB6420A222BF0047F766 /* ytVideoController.swift in Sources */,
 				C1DCA4882089479200CCAAB9 /* Ref.swift in Sources */,
@@ -620,6 +638,7 @@
 				C1DCA48E20894DCF00CCAAB9 /* UsernameView.swift in Sources */,
 				C15C4E08208BD0D2005D1BEF /* MyTabBar.swift in Sources */,
 				C111A8492094AA260028ECBE /* TextViewWithHashtag.swift in Sources */,
+				C157DB6B20A318D10047F766 /* YouTubeVideoController.swift in Sources */,
 				C1DCA47620891D4900CCAAB9 /* ConnexionController.swift in Sources */,
 				C1DCA496208B24EE00CCAAB9 /* Category.swift in Sources */,
 				C15C4E0A208BD10D005D1BEF /* FilController.swift in Sources */,
@@ -628,6 +647,7 @@
 				C1657ACB208EA5E0006799D6 /* roundedImage.swift in Sources */,
 				C1244C072088F3D300F85C2C /* AppMyDelight.xcdatamodeld in Sources */,
 				C15C4E11208BD15D005D1BEF /* PhotoController.swift in Sources */,
+				C157DB7220A32F230047F766 /* TableauVideoController.swift in Sources */,
 				C1DCA48C208948E700CCAAB9 /* TypeAlias.swift in Sources */,
 				C15C4E2A208E3208005D1BEF /* EffectController.swift in Sources */,
 				C1657AD6208F4D64006799D6 /* fxController.swift in Sources */,

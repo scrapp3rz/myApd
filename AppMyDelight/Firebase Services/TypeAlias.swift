@@ -14,5 +14,6 @@ typealias SuccessCompletion = (_ success: Bool?,  _ erreur: String?) -> (Void)
 typealias HashtagCompletion = (_ hashtag: Hashtag?) -> (Void)
 typealias CommentCompletion = (_ comments: Comments?) -> (Void)
 typealias NotifsCompletion = (_ notifs: Notifs?) -> (Void)
+typealias VideoCompletion = (_ YouTubeVideo: YtVideo?) -> (Void)
 
 
