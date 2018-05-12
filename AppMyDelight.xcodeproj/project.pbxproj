@@ -71,6 +71,8 @@
 		C1657AE1208FBDDA006799D6 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1657AE0208FBDDA006799D6 /* PostCell.swift */; };
 		C1657AE3208FC0C4006799D6 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1657AE2208FC0C4006799D6 /* PostView.swift */; };
 		C1657AE5208FC0D5006799D6 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1657AE4208FC0D5006799D6 /* PostView.xib */; };
+		C19BDD7120A72CE300B6F8C2 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BDD6F20A72CE300B6F8C2 /* VideoController.swift */; };
+		C19BDD7220A72CE300B6F8C2 /* VideoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C19BDD7020A72CE300B6F8C2 /* VideoController.xib */; };
 		C19EAC862099B9BE005B8917 /* Hashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19EAC852099B9BD005B8917 /* Hashtag.swift */; };
 		C19EAC8A2099C5F9005B8917 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19EAC882099C5F9005B8917 /* UserCell.swift */; };
 		C19EAC8B2099C5F9005B8917 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C19EAC892099C5F9005B8917 /* UserCell.xib */; };
@@ -163,6 +165,8 @@
 		C1657AE0208FBDDA006799D6 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		C1657AE2208FC0C4006799D6 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		C1657AE4208FC0D5006799D6 /* PostView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
+		C19BDD6F20A72CE300B6F8C2 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
+		C19BDD7020A72CE300B6F8C2 /* VideoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoController.xib; sourceTree = "<group>"; };
 		C19EAC852099B9BD005B8917 /* Hashtag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hashtag.swift; sourceTree = "<group>"; };
 		C19EAC882099C5F9005B8917 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		C19EAC892099C5F9005B8917 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
@@ -345,6 +349,8 @@
 				C157DB6A20A318D10047F766 /* YouTubeVideoController.swift */,
 				C157DB7020A32F230047F766 /* TableauVideoController.swift */,
 				C157DB7120A32F230047F766 /* TableauVideoController.xib */,
+				C19BDD6F20A72CE300B6F8C2 /* VideoController.swift */,
+				C19BDD7020A72CE300B6F8C2 /* VideoController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -484,6 +490,7 @@
 				C119FFDD20977C6A005F9A9F /* ProfileHeader.xib in Resources */,
 				C158B722208E6BDD00D8D05C /* LibrairieCell.xib in Resources */,
 				C157DB59209F3F9B0047F766 /* PostUnicController.xib in Resources */,
+				C19BDD7220A72CE300B6F8C2 /* VideoController.xib in Resources */,
 				C19EAC8F2099C60D005B8917 /* HashtagCell.xib in Resources */,
 				C1244C0C2088F3D400F85C2C /* LaunchScreen.storyboard in Resources */,
 				C19EAC8B2099C5F9005B8917 /* UserCell.xib in Resources */,
@@ -617,6 +624,7 @@
 				C1DCA494208B24EE00CCAAB9 /* Ingredient.swift in Sources */,
 				C157DB58209F3F9B0047F766 /* PostUnicController.swift in Sources */,
 				C1657AD2208F29DA006799D6 /* ResizerController.swift in Sources */,
+				C19BDD7120A72CE300B6F8C2 /* VideoController.swift in Sources */,
 				C1DCA48A208948B100CCAAB9 /* BDD.swift in Sources */,
 				C119FFDC20977C6A005F9A9F /* ProfileHeader.swift in Sources */,
 				C157DB54209DA6E00047F766 /* CommentsCell.swift in Sources */,
@@ -804,7 +812,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W72835Q984;
 				INFOPLIST_FILE = "$(SRCROOT)/AppMyDelight/Plists/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -824,7 +832,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W72835Q984;
 				INFOPLIST_FILE = "$(SRCROOT)/AppMyDelight/Plists/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

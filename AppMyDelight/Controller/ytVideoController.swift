@@ -54,6 +54,25 @@ class ytVideoController: UIViewController, UITableViewDelegate, UITableViewDataS
         return 140
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = VideoController()
+        controller.ytVideos = ytVideos[indexPath.row]
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
+    
+   /*
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let ytVideo = ytVideos[indexPath.row]
+        
+    }
+ 
+ */
+    
+    
+    
     /*
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let ytVideo = ytVideos[indexPath.row]
