@@ -33,6 +33,8 @@ class NotifController: UITableViewController {
     
     @objc func addNotifs(notification: Notification) {
         tableView.reloadData()
+        // TODO: dfhjnkhn
+        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,6 +43,7 @@ class NotifController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+         // FIXME: ameliorer l'interface
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,6 +51,12 @@ class NotifController: UITableViewController {
         cell.setup(notifs: NOTIFS[indexPath.row], controller: self)
         return cell
     }
+    
+    
+    
+
+    
+   
     
     
 }

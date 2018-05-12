@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ytVideoController" customModule="AppMyDelight" customModuleProvider="target">
             <connections>
-                <outlet property="TableView" destination="fk1-ej-gSS" id="ukU-t2-rqw"/>
+                <outlet property="TableView" destination="ASg-Ml-PLg" id="BLH-Cp-Rk4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,17 +21,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fk1-ej-gSS">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ASg-Ml-PLg">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="fk1-ej-gSS" secondAttribute="bottom" id="7Ff-CR-3jG"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fk1-ej-gSS" secondAttribute="trailing" id="FXW-G4-QfV"/>
-                <constraint firstItem="fk1-ej-gSS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="K2d-5m-VAr"/>
-                <constraint firstItem="fk1-ej-gSS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bwK-iS-csb"/>
+                <constraint firstItem="ASg-Ml-PLg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="E3z-Ha-bXX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ASg-Ml-PLg" secondAttribute="bottom" id="cA3-hb-gXy"/>
+                <constraint firstItem="ASg-Ml-PLg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eYM-lO-V4H"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ASg-Ml-PLg" secondAttribute="trailing" id="fLC-vg-v1f"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="24.5" y="51.5"/>

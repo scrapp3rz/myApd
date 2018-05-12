@@ -41,5 +41,7 @@ class CommentsCell: UITableViewCell {
         Name_Label.attributedText(string1: self.comments.user.username, string2: string2)
         Comments_Label.attributedText(string1: self.comments.text, string2: "\n" + self.comments.date.xTimeAgo())
         
+        
+        // TODO: ezrtruyghvgcfjgdt
     }
 }

@@ -11,6 +11,7 @@ import FirebaseDatabase
 
 
 class User {
+    
     private var _ref: DatabaseReference!
     private var _id: String!
     private var _username: String!

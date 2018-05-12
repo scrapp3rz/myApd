@@ -23,23 +23,48 @@ class YoutubeVideoCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
+    
+    func createCell(_ ytVid: YtVideo) {
+        self.ytVid = ytVid
+        telechargerImage()
+        let attributed = NSMutableAttributedString(string: self.ytVid.shortPitch, attributes: [.font: UIFont.boldSystemFont(ofSize: 16), .foregroundColor: UIColor.black])
+        let secondeLigne = NSAttributedString(string: "\n" + self.ytVid.recipeName, attributes: [.font: UIFont.italicSystemFont(ofSize: 18), .foregroundColor: UIColor.darkGray])
+        attributed.append(secondeLigne)
+        Name_Picht_Label.attributedText = attributed
+    }
+    
+    func telechargerImage() {
+        Video_Miniature.image = #imageLiteral(resourceName: "play-button")
+        if let url = URL(string: self.ytVid.miniatureUrl) {
+            let session = URLSession.shared
+            let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
+                if let imageData = data, let image = UIImage(data: imageData) {
+                    DispatchQueue.main.async {
+                        self.Video_Miniature.image = image
+                    }
+                }
+            })
+            task.resume()
+        }
+    }
+    
+    /*
     func setup(ytVid: YtVideo, controller: ytVideoController) {
         self.ytVid = ytVid
         self.controller = controller
         Video_Miniature.download(imageUrl: nil)
         
         
+        
     }
-    
+    */
     
 }
 

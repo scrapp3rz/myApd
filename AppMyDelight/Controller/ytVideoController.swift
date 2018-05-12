@@ -16,6 +16,8 @@ class ytVideoController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     var ytVideos = [YtVideo]()
     
+    let identifiantCell = "YoutubeVideoCell"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,7 @@ class ytVideoController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         
         addYtVideo()
+        title = "Recettes en vidéo"
         
         TableView.reloadData()
 
@@ -35,7 +38,23 @@ class ytVideoController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ytVideos.count
     }
+   
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let ytVideo = ytVideos[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: identifiantCell) as? YoutubeVideoCell {
+            cell.createCell(ytVideo)
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
     
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
+    
+    /*
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let ytVideo = ytVideos[indexPath.row]
         let cell = YoutubeVideoCell()
@@ -43,42 +62,44 @@ class ytVideoController: UIViewController, UITableViewDelegate, UITableViewDataS
         return cell
     }
 
-    
+ */
+ 
+ 
     @objc func addYtVideo() {
         ytVideos = [YtVideo]()
         
 
-        let TarteNutella = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella", code: "PZZ4iC1Qsbc")
+        let TarteNutella = YtVideo(shortPitch: "Etoile feuilletée au Nutella", recipeName: "Tarte Nutella et pâte feuilletée", code: "oy1bLDkUcag")
         ytVideos.append(TarteNutella)
-        let TarteNutella1 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella1", code: "PZZ4iC1Qsbc")
+        let TarteNutella1 = YtVideo(shortPitch: "Blinis express et faciles", recipeName: "Les blinis en 10' chrono", code: "Z_8iNx0f3TA")
         ytVideos.append(TarteNutella1)
-        let TarteNutella2 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella2", code: "PZZ4iC1Qsbc")
+        let TarteNutella2 = YtVideo(shortPitch: "Quatre-Quart traditionnel", recipeName: "4 ingrédients, une recette!", code: "NJjJtSXNAFk")
         ytVideos.append(TarteNutella2)
-        let TarteNutella3 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella3", code: "PZZ4iC1Qsbc")
+        let TarteNutella3 = YtVideo(shortPitch: "Fondant chocolat aux courgettes", recipeName: "Recette sans sucre", code: "Pz3h3-EbFX8")
         ytVideos.append(TarteNutella3)
-        let TarteNutella4 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella4", code: "PZZ4iC1Qsbc")
+        let TarteNutella4 = YtVideo(shortPitch: "Tortilla de patata traditionnelle", recipeName: "Toute l'Espagne en un tapas", code: "DT3SvdiN3SA")
         ytVideos.append(TarteNutella4)
-        let TarteNutella5 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella5", code: "PZZ4iC1Qsbc")
+        let TarteNutella5 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella5", code: "oy1bLDkUcag")
         ytVideos.append(TarteNutella5)
-        let TarteNutella6 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella6", code: "PZZ4iC1Qsbc")
+        let TarteNutella6 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella6", code: "oy1bLDkUcag")
         ytVideos.append(TarteNutella6)
-        let TarteNutella7 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella7", code: "PZZ4iC1Qsbc")
+        let TarteNutella7 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella7", code: "oy1bLDkUcag")
         ytVideos.append(TarteNutella7)
-        let TarteNutella8 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella8", code: "PZZ4iC1Qsbc")
+        let TarteNutella8 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella8", code: "oy1bLDkUcag")
         ytVideos.append(TarteNutella8)
-        let TarteNutella9 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella9", code: "PZZ4iC1Qsbc")
+        let TarteNutella9 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella9", code: "oy1bLDkUcag")
         ytVideos.append(TarteNutella9)
-        let TarteNutella10 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella10", code: "PZZ4iC1Qsbc")
+        let TarteNutella10 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella10", code: "oy1bLDkUcag")
         ytVideos.append(TarteNutella10)
-        let TarteNutella11 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella11", code: "PZZ4iC1Qsbc")
+        let TarteNutella11 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella11", code: "oy1bLDkUcag")
         ytVideos.append(TarteNutella11)
-        let TarteNutella12 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella12", code: "PZZ4iC1Qsbc")
+        let TarteNutella12 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella12", code: "oy1bLDkUcag")
         ytVideos.append(TarteNutella12)
-        let TarteNutella13 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella13", code: "PZZ4iC1Qsbc")
+        let TarteNutella13 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella13", code: "oy1bLDkUcag")
         ytVideos.append(TarteNutella13)
-        let TarteNutella14 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella14", code: "PZZ4iC1Qsbc")
+        let TarteNutella14 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella14", code: "oy1bLDkUcag")
         ytVideos.append(TarteNutella14)
-        let TarteNutella15 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella15", code: "PZZ4iC1Qsbc")
+        let TarteNutella15 = YtVideo(shortPitch: "Tarte Nutella et pâte feuilletée", recipeName: "Etoile feuilletée au Nutella15", code: "oy1bLDkUcag")
         ytVideos.append(TarteNutella15)
         
         
