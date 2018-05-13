@@ -34,8 +34,8 @@ class YoutubeVideoCell: UITableViewCell {
     func createCell(_ ytVid: YtVideo) {
         self.ytVid = ytVid
         telechargerImage()
-        let attributed = NSMutableAttributedString(string: self.ytVid.shortPitch, attributes: [.font: UIFont.boldSystemFont(ofSize: 16), .foregroundColor: UIColor.black])
-        let secondeLigne = NSAttributedString(string: "\n" + self.ytVid.recipeName, attributes: [.font: UIFont.italicSystemFont(ofSize: 18), .foregroundColor: UIColor.darkGray])
+        let attributed = NSMutableAttributedString(string: self.ytVid.shortPitch, attributes: [.font: UIFont.boldSystemFont(ofSize: 14), .foregroundColor: UIColor.black])
+        let secondeLigne = NSAttributedString(string: "\n" + self.ytVid.recipeName, attributes: [.font: UIFont.italicSystemFont(ofSize: 16), .foregroundColor: UIColor.darkGray])
         attributed.append(secondeLigne)
         Name_Picht_Label.attributedText = attributed
     }
