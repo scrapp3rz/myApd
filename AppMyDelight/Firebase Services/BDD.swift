@@ -106,7 +106,7 @@ class BDD {
     func getPostsFromHashtag(dict: [String: String], completion: @escaping PostCompletion) {
         for (key, value) in dict {
             getUser(id: value, completion: { (utilisateur) -> (Void) in
-                if let user = utilisateur {
+                if utilisateur != nil {
                     Ref().specificPost(key: key, value: value).observe(.value, with: { (snapshot) in
                         completion(self.convertPost(user: utilisateur!, snapshot: snapshot))
                     })

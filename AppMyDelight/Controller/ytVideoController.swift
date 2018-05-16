@@ -60,32 +60,10 @@ class ytVideoController: UIViewController, UITableViewDelegate, UITableViewDataS
         controller.ytVideos = ytVideos[indexPath.row]
         self.navigationController?.pushViewController(controller, animated: true)
     }
-    
-    
-    
-   /*
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let ytVideo = ytVideos[indexPath.row]
-        
-    }
- 
- */
-    
-    
-    
-    /*
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let ytVideo = ytVideos[indexPath.row]
-        let cell = YoutubeVideoCell()
-        cell.textLabel?.text = ytVideo.recipeName
-        return cell
-    }
-
- */
  
  
     @objc func addYtVideo() {
-        ytVideos = [YtVideo]()
+    //    ytVideos = [YtVideo]()
         
 
         let TarteNutella = YtVideo(shortPitch: "Etoile feuilletée au Nutella", recipeName: "Tarte Nutella et pâte feuilletée", code: "oy1bLDkUcag")

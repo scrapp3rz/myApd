@@ -63,10 +63,9 @@ class NotifsCell: UITableViewCell {
     
     @objc func goToPost() {
         let postController = PostUnicController()
-        if let post = self.notifs.post {
+        if self.notifs.post != nil {
             postController.post = self.notifs.post
             controller?.navigationController?.pushViewController(postController, animated: true)
-
         }
     }
     

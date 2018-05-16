@@ -19,7 +19,7 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nibPost = UINib(nibName: POST_CELL, bundle: nil)
+        _ = UINib(nibName: POST_CELL, bundle: nil)
         let nibSquareImage = UINib(nibName: SQUARE_IMAGE_CELL, bundle: nil)
         let reusableView = UINib(nibName: PROFILE_HEADER, bundle: nil)
         collectionView?.delegate = self

@@ -71,7 +71,7 @@ class TextViewWithHashtag: UITextView {
         let wordLenght = offset(from: wordChoosen.start, to: wordChoosen.end)
         let wordRange = NSMakeRange(wordPosition, wordLenght)
         let myWord = attributedText.attributedSubstring(from: wordRange)
-        let myWordString = myWord.string
+        _ = myWord.string
         
         guard isItHashtag != nil else { return }
         
