@@ -50,7 +50,7 @@ class ConnexionController: UIViewController {
         if let mail = myMail, mail != "" {
             if let mdp = password, myPassword != "" {
                 // verif Firebase
-                Auth.auth().signIn(withEmail: mail, password: mdp) { (user, error) in
+                Auth.auth().signIn(withEmail: mail, password: mdp, completion: { (user, error) in
                     if let erreur = error {
                         let nsErreur = erreur as NSError
                         if nsErreur.code == 17011 {
@@ -66,10 +66,10 @@ class ConnexionController: UIViewController {
                         ErrorDisplay().basicError(controller: self, message: erreur.localizedDescription)
                     }
                 }
-                    if let id = user?.uid {
+                    if let id = user?.user.uid {
                         self.checkUser(id: id)
                     }
-                }
+                })
             } else {
                 ErrorDisplay().basicError(controller: self, message: "Le mot de passe ne peut pas être vide")
             }

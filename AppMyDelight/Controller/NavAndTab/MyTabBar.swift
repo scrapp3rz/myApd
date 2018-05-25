@@ -31,9 +31,9 @@ class MyTabBar: UITabBarController {
         
     viewControllers = [
         
-        
-        add(controller: fil, image: #imageLiteral(resourceName: "tab_accueil"), title: "accueil"),
         add(controller: ytVideoController(), image: #imageLiteral(resourceName: "play-button"), title: "Vidéos"),
+        add(controller: fil, image: #imageLiteral(resourceName: "tab_accueil"), title: "accueil"),
+        
         add(controller: SearchController(), image: #imageLiteral(resourceName: "Search"), title: "Rechercher"),
     //    add(controller: TableauVideoController(), image: #imageLiteral(resourceName: "play-button"), title: "Vidéos"),
         add(controller: notif, image: #imageLiteral(resourceName: "tab_notif"), title: "Notifications"),

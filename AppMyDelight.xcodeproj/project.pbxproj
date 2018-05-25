@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AAC3106402F37F80DE0CB265 /* Pods_AppMyDelight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0174E126629C93C7FBA2B3 /* Pods_AppMyDelight.framework */; };
+		C1111DE420B724E600B70ED0 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1111DE320B724E600B70ED0 /* credentials.plist */; };
+		C1111DE620B726D000B70ED0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1111DE520B726D000B70ED0 /* GoogleService-Info.plist */; };
 		C111A8492094AA260028ECBE /* TextViewWithHashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C111A8482094AA250028ECBE /* TextViewWithHashtag.swift */; };
 		C119FFDC20977C6A005F9A9F /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C119FFDA20977C69005F9A9F /* ProfileHeader.swift */; };
 		C119FFDD20977C6A005F9A9F /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C119FFDB20977C69005F9A9F /* ProfileHeader.xib */; };
@@ -18,7 +20,6 @@
 		C1244C072088F3D300F85C2C /* AppMyDelight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1244C052088F3D300F85C2C /* AppMyDelight.xcdatamodeld */; };
 		C1244C092088F3D400F85C2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1244C082088F3D400F85C2C /* Assets.xcassets */; };
 		C1244C0C2088F3D400F85C2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1244C0A2088F3D400F85C2C /* LaunchScreen.storyboard */; };
-		C1244C142088F42B00F85C2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1244C132088F42B00F85C2C /* GoogleService-Info.plist */; };
 		C157DB4E209B92C00047F766 /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB4C209B92C00047F766 /* CommentController.swift */; };
 		C157DB4F209B92C00047F766 /* CommentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C157DB4D209B92C00047F766 /* CommentController.xib */; };
 		C157DB51209C529D0047F766 /* TextViewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157DB50209C529D0047F766 /* TextViewComment.swift */; };
@@ -100,6 +101,8 @@
 /* Begin PBXFileReference section */
 		2C0174E126629C93C7FBA2B3 /* Pods_AppMyDelight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppMyDelight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51F30630D4AAA2B5F3A3A7DC /* Pods-AppMyDelight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppMyDelight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppMyDelight/Pods-AppMyDelight.debug.xcconfig"; sourceTree = "<group>"; };
+		C1111DE320B724E600B70ED0 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		C1111DE520B726D000B70ED0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C111A8482094AA250028ECBE /* TextViewWithHashtag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWithHashtag.swift; sourceTree = "<group>"; };
 		C119FFDA20977C69005F9A9F /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		C119FFDB20977C69005F9A9F /* ProfileHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeader.xib; sourceTree = "<group>"; };
@@ -112,7 +115,6 @@
 		C1244C082088F3D400F85C2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1244C0B2088F3D400F85C2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1244C0D2088F3D400F85C2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1244C132088F42B00F85C2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C157DB4C209B92C00047F766 /* CommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
 		C157DB4D209B92C00047F766 /* CommentController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentController.xib; sourceTree = "<group>"; };
 		C157DB50209C529D0047F766 /* TextViewComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewComment.swift; sourceTree = "<group>"; };
@@ -322,7 +324,8 @@
 			isa = PBXGroup;
 			children = (
 				C1244C0D2088F3D400F85C2C /* Info.plist */,
-				C1244C132088F42B00F85C2C /* GoogleService-Info.plist */,
+				C1111DE320B724E600B70ED0 /* credentials.plist */,
+				C1111DE520B726D000B70ED0 /* GoogleService-Info.plist */,
 			);
 			path = Plists;
 			sourceTree = "<group>";
@@ -490,6 +493,8 @@
 				C119FFDD20977C6A005F9A9F /* ProfileHeader.xib in Resources */,
 				C158B722208E6BDD00D8D05C /* LibrairieCell.xib in Resources */,
 				C157DB59209F3F9B0047F766 /* PostUnicController.xib in Resources */,
+				C1111DE620B726D000B70ED0 /* GoogleService-Info.plist in Resources */,
+				C1111DE420B724E600B70ED0 /* credentials.plist in Resources */,
 				C19BDD7220A72CE300B6F8C2 /* VideoController.xib in Resources */,
 				C19EAC8F2099C60D005B8917 /* HashtagCell.xib in Resources */,
 				C1244C0C2088F3D400F85C2C /* LaunchScreen.storyboard in Resources */,
@@ -497,7 +502,6 @@
 				C15C4E34208E3CF4005D1BEF /* ResizeController.xib in Resources */,
 				C15C4E12208BD15D005D1BEF /* PhotoController.xib in Resources */,
 				C1DCA49020894DDF00CCAAB9 /* UsernameView.xib in Resources */,
-				C1244C142088F42B00F85C2C /* GoogleService-Info.plist in Resources */,
 				C119FFE12098656A005F9A9F /* ModificationController.xib in Resources */,
 				C15C4E2B208E3208005D1BEF /* EffectController.xib in Resources */,
 				C1657AC9208EA360006799D6 /* FinishPostController.xib in Resources */,
@@ -524,31 +528,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AppMyDelight/Pods-AppMyDelight-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -582,25 +578,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AppMyDelight/Pods-AppMyDelight-resources.sh",
+				"${PODS_ROOT}/FirebaseInvites/Resources/GINInviteResources.bundle",
+				"${PODS_ROOT}/FirebaseInvites/Resources/GPPACLPickerResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GINInviteResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GPPACLPickerResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

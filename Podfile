@@ -12,18 +12,16 @@ target 'AppMyDelight' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Database'
 	pod 'Firebase/Storage'
+	pod 'Firebase/AdMob'
+	pod 'Firebase/Invites'
+	pod 'FirebaseUI/Auth'
+	pod 'FirebaseUI/Phone'
+	pod 'FirebaseUI/Storage'
+	pod 'Fabric'
+	pod 'Crashlytics'
 	pod 'SDWebImage'
 	pod 'GoogleSignIn'
-	pod 'FBSDKCoreKit'
-	pod 'FBSDKLoginKit'
-	pod 'FBSDKShareKit'
-	pod 'TwitterKit'
-	pod 'FirebaseUI/Auth'
-	pod 'FirebaseUI/Google'
-	pod 'FirebaseUI/Facebook'
-	pod 'FirebaseUI/Twitter'
-	pod 'FirebaseUI/Phone'
-
+	
 
 
 end
